@@ -336,7 +336,7 @@ def run_agent(model: str, harness_url: str, task_text: str) -> None:
         print(f"Next {step}... ", end="")
 
         started = time.time()
-        resp = client.beta.chat.completions.parse(
+        resp = client.chat.completions.parse(
             model=model,
             response_format=NextStep,
             messages=log,
