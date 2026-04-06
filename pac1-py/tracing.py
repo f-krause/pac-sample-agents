@@ -19,6 +19,7 @@ import re
 from typing import Any
 
 import mlflow
+from mlflow.tracking import MlflowClient
 
 _DATA_DIR = Path(__file__).parent / "data"
 _DATA_DIR.mkdir(parents=True, exist_ok=True)
@@ -28,6 +29,7 @@ MLFLOW_TRACKING_URI = f"sqlite:///{MLFLOW_DB}"
 MODEL_PRICES_PATH = Path(__file__).parent / "model_prices.json"
 
 _initialized = False
+_current_experiment_id: str | None = None
 _model_prices_cache: dict[str, dict[str, float]] | None = None
 _model_price_warnings: set[str] = set()
 
@@ -46,16 +48,45 @@ def init_tracing(*, debug: bool = False) -> None:
         debug: If True, traces go to a timestamped debug-run experiment;
                otherwise they go to a timestamped full-run experiment.
     """
-    global _initialized
+    global _initialized, _current_experiment_id
     if _initialized:
         return
 
     mlflow.set_tracking_uri(MLFLOW_TRACKING_URI)
-    mlflow.set_experiment(_experiment_name(debug=debug))
+    experiment = mlflow.set_experiment(_experiment_name(debug=debug))
+    _current_experiment_id = experiment.experiment_id
 
     mlflow.openai.autolog()
 
     _initialized = True
+
+
+def _score_summary_lines(scores: list[tuple[str, float]]) -> list[str]:
+    lines: list[str] = []
+    if len(scores) == 1:
+        _, score = scores[0]
+        lines.append(f"Score: {score:0.2f}")
+
+    lines.extend(f"{task_id}: {score:0.2f}" for task_id, score in scores)
+    final_percent = sum(score for _, score in scores) / len(scores) * 100.0
+    lines.append(f"FINAL: {final_percent:0.2f}%")
+    return lines
+
+
+def record_experiment_score_summary(scores: list[tuple[str, float]]) -> None:
+    """Store the CLI-style score summary on the current MLflow experiment."""
+    if not scores or _current_experiment_id is None:
+        return
+
+    final_ratio = sum(score for _, score in scores) / len(scores)
+    client = MlflowClient(tracking_uri=MLFLOW_TRACKING_URI)
+    tags = {
+        "final_score": f"{final_ratio:0.2f}",
+        "final_score_pct": f"{final_ratio * 100.0:0.2f}%",
+        "score_summary": "\n".join(_score_summary_lines(scores)),
+    }
+    for key, value in tags.items():
+        client.set_experiment_tag(_current_experiment_id, key, value)
 
 
 def _load_model_prices() -> dict[str, dict[str, float]]:

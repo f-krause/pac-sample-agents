@@ -7,7 +7,14 @@ from bitgn.harness_pb2 import EndTrialRequest, EvalPolicy, GetBenchmarkRequest, 
 from connectrpc.errors import ConnectError
 
 from agent import run_agent
-from tracing import init_tracing, trace_run, trace_task, record_task_score, record_run_llm_totals
+from tracing import (
+    init_tracing,
+    trace_run,
+    trace_task,
+    record_experiment_score_summary,
+    record_task_score,
+    record_run_llm_totals,
+)
 
 load_dotenv()
 
@@ -94,6 +101,7 @@ def main() -> None:
         print(f"{CLI_RED}Interrupted{CLI_CLR}")
 
     if scores:
+        record_experiment_score_summary(scores)
         for task_id, score in scores:
             style = CLI_GREEN if score == 1 else CLI_RED
             print(f"{task_id}: {style}{score:0.2f}{CLI_CLR}")
