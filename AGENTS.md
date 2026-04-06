@@ -1,2 +1,3 @@
 - Only pac1-py folder is relevant for this project
 - If adding new functionality, also add the main commands to the make file in the pac1-py folder. For example, if you add a new script, add a command to run it in the make file.
+- use mermaid for illustrations/plots in docs
