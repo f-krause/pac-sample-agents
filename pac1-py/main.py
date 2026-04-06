@@ -1,5 +1,6 @@
 import os
 import textwrap
+import time
 from dotenv import load_dotenv
 
 from bitgn.harness_connect import HarnessServiceClientSync
@@ -61,6 +62,7 @@ def main() -> None:
             task_count=len(active_tasks),
             debug=is_debug,
         ):
+            run_started_at = time.perf_counter()
             for task in active_tasks:
                 print(f"{'=' * 30} Starting task: {task.task_id} {'=' * 30}")
                 trial = client.start_playground(
@@ -93,7 +95,11 @@ def main() -> None:
                         explain = textwrap.indent("\n".join(result.score_detail), "  ")
                         print(f"\n{style}Score: {result.score:0.2f}\n{explain}\n{CLI_CLR}")
 
-            record_run_llm_totals(MODEL_ID, run_llm_totals)
+            record_run_llm_totals(
+                MODEL_ID,
+                run_llm_totals,
+                runtime_seconds=time.perf_counter() - run_started_at,
+            )
 
     except ConnectError as exc:
         print(f"{exc.code}: {exc.message}")

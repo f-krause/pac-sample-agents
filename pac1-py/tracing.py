@@ -255,7 +255,7 @@ def record_llm_metadata(model_id: str, totals: dict[str, float]) -> None:
     )
 
 
-def record_run_llm_totals(model_id: str, totals: dict[str, float]) -> None:
+def record_run_llm_totals(model_id: str, totals: dict[str, float], *, runtime_seconds: float) -> None:
     """Log full-run cumulative LLM totals on the parent run."""
     for metric_name, value in (
         ("run_llm_prompt_tokens_total", totals["prompt_tokens"]),
@@ -265,6 +265,7 @@ def record_run_llm_totals(model_id: str, totals: dict[str, float]) -> None:
         ("run_llm_input_cost_usd_total", totals["input_cost_usd"]),
         ("run_llm_output_cost_usd_total", totals["output_cost_usd"]),
         ("run_llm_cost_usd_total", totals["cost_usd"]),
+        ("run_runtime_seconds", runtime_seconds),
     ):
         mlflow.log_metric(metric_name, value)
 
@@ -283,6 +284,7 @@ def record_run_llm_totals(model_id: str, totals: dict[str, float]) -> None:
             "run_llm_input_cost_usd_total": f"{totals['input_cost_usd']:.10f}",
             "run_llm_output_cost_usd_total": f"{totals['output_cost_usd']:.10f}",
             "run_llm_cost_usd_total": f"{totals['cost_usd']:.10f}",
+            "run_runtime_seconds": f"{runtime_seconds:.6f}",
         }
     )
 
