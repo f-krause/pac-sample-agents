@@ -1,11 +1,14 @@
 import os
 import textwrap
+from dotenv import load_dotenv
 
 from bitgn.harness_connect import HarnessServiceClientSync
 from bitgn.harness_pb2 import EndTrialRequest, EvalPolicy, GetBenchmarkRequest, StartPlaygroundRequest, StatusRequest
 from connectrpc.errors import ConnectError
 
 from agent import run_agent
+
+load_dotenv()
 
 BITGN_URL = os.getenv("BENCHMARK_HOST") or "https://api.bitgn.com"
 BENCHMARK_ID = os.getenv("BENCHMARK_ID") or "bitgn/pac1-dev"
