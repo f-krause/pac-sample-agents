@@ -1,7 +1,7 @@
 # AICODE-NOTE: Keep these wrappers aligned with the README commands so the sample
 # stays trivial to run from a fresh checkout without inventing parallel workflows.
 
-.PHONY: sync run task collect collect-runs collect-debug
+.PHONY: sync run task collect collect-runs collect-debug mlflow
 
 sync:
 	uv sync
@@ -26,3 +26,7 @@ collect-runs:
 # usage: make collect-debug N=3
 collect-debug:
 	uv run python collect_tasks.py --limit $(or $(N),2)
+
+# Launch MLflow UI to browse traces (uses SQLite store in data/mlflow.db)
+mlflow:
+	uv run mlflow ui --backend-store-uri sqlite:///data/mlflow.db

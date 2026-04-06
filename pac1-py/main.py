@@ -7,6 +7,7 @@ from bitgn.harness_pb2 import EndTrialRequest, EvalPolicy, GetBenchmarkRequest, 
 from connectrpc.errors import ConnectError
 
 from agent import run_agent
+from tracing import init_tracing, trace_run, trace_task, record_task_score
 
 load_dotenv()
 
@@ -22,6 +23,9 @@ CLI_BLUE = "\x1B[34m"
 
 def main() -> None:
     task_filter = os.sys.argv[1:]
+    is_debug = bool(task_filter)
+
+    init_tracing(debug=is_debug)
 
     scores = []
     try:
@@ -33,31 +37,40 @@ def main() -> None:
             f"with {len(res.tasks)} tasks.\n{CLI_GREEN}{res.description}{CLI_CLR}"
         )
 
-        for task in res.tasks:
-            if task_filter and task.task_id not in task_filter:
-                continue
+        active_tasks = [t for t in res.tasks if not task_filter or t.task_id in task_filter]
 
-            print(f"{'=' * 30} Starting task: {task.task_id} {'=' * 30}")
-            trial = client.start_playground(
-                StartPlaygroundRequest(
-                    benchmark_id=BENCHMARK_ID,
-                    task_id=task.task_id,
+        with trace_run(
+            model_id=MODEL_ID,
+            benchmark_id=BENCHMARK_ID,
+            task_count=len(active_tasks),
+            debug=is_debug,
+        ):
+            for task in active_tasks:
+                print(f"{'=' * 30} Starting task: {task.task_id} {'=' * 30}")
+                trial = client.start_playground(
+                    StartPlaygroundRequest(
+                        benchmark_id=BENCHMARK_ID,
+                        task_id=task.task_id,
+                    )
                 )
-            )
 
-            print(f"{CLI_BLUE}{trial.instruction}{CLI_CLR}\n{'-' * 80}")
+                print(f"{CLI_BLUE}{trial.instruction}{CLI_CLR}\n{'-' * 80}")
 
-            try:
-                run_agent(MODEL_ID, trial.harness_url, trial.instruction)
-            except Exception as exc:
-                print(exc)
+                with trace_task(task.task_id, trial.instruction) as task_run:
+                    try:
+                        run_agent(MODEL_ID, trial.harness_url, trial.instruction)
+                    except Exception as exc:
+                        import mlflow
+                        mlflow.log_param("task_error", str(exc)[:250])
+                        print(exc)
 
-            result = client.end_trial(EndTrialRequest(trial_id=trial.trial_id))
-            if result.score >= 0:
-                scores.append((task.task_id, result.score))
-                style = CLI_GREEN if result.score == 1 else CLI_RED
-                explain = textwrap.indent("\n".join(result.score_detail), "  ")
-                print(f"\n{style}Score: {result.score:0.2f}\n{explain}\n{CLI_CLR}")
+                    result = client.end_trial(EndTrialRequest(trial_id=trial.trial_id))
+                    if result.score >= 0:
+                        scores.append((task.task_id, result.score))
+                        record_task_score(task_run, task.task_id, result.score, list(result.score_detail))
+                        style = CLI_GREEN if result.score == 1 else CLI_RED
+                        explain = textwrap.indent("\n".join(result.score_detail), "  ")
+                        print(f"\n{style}Score: {result.score:0.2f}\n{explain}\n{CLI_CLR}")
 
     except ConnectError as exc:
         print(f"{exc.code}: {exc.message}")

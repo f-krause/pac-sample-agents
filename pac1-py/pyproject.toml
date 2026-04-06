@@ -10,12 +10,17 @@ dependencies = [
     "openai>=2.26.0",
     "pydantic>=2.12.5",
     "python-dotenv>=1.2.2",
+    "mlflow>=2.22.0",
+    "protobuf>=7.34.1",
 ]
 
 [[tool.uv.index]]
 url = "https://buf.build/gen/python"
 
 [tool.uv]
+# bitgn gencode requires protobuf >=7.34.1 but mlflow caps at <7;
+# force the newer runtime until mlflow releases a compatible version.
+override-dependencies = ["protobuf>=7.34.1"]
 # AICODE-NOTE: `harness_core/scripts/sdk-python.sh` rewrites the Buf SDK pins
 # in this file after `buf push`; keep this project flat so the sample stays
 # runnable without packaging ceremony.
