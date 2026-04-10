@@ -588,7 +588,7 @@ def run_agent(model: str, harness_url: str, task_text: str) -> dict[str, float]:
                 model=model,
                 response_format=NextStep,
                 messages=log,
-                max_completion_tokens=4096,
+                max_completion_tokens=16384,
             )
         except LengthFinishReasonError:
             # Completion hit the token limit (usually a runaway write/state).
@@ -609,7 +609,7 @@ def run_agent(model: str, harness_url: str, task_text: str) -> dict[str, float]:
                         model=model,
                         response_format=NextStep,
                         messages=log,
-                        max_completion_tokens=4096,
+                        max_completion_tokens=16384,
                     )
                 except LengthFinishReasonError:
                     print(f"{CLI_RED}length limit hit again, aborting step{CLI_CLR}")
