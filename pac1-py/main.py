@@ -78,7 +78,7 @@ def main() -> None:
     task_filter = os.sys.argv[1:]
     is_debug = bool(task_filter)
 
-    log_dir = setup_run_log_dir()
+    log_dir = setup_run_log_dir(debug=is_debug)
     print(f"Logging run to: {log_dir}")
 
     init_tracing(debug=is_debug)
