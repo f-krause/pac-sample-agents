@@ -2,6 +2,7 @@ import json
 import os
 import shlex
 import time
+import httpx
 from typing import Annotated, List, Literal, Union
 
 from annotated_types import Ge, Le, MaxLen, MinLen
@@ -447,6 +448,21 @@ _RATE_LIMIT_MAX_RETRIES = 5
 _RATE_LIMIT_BASE_DELAY = 0.5  # seconds
 
 
+def _build_openai_client() -> OpenAI:
+    http_client = None
+    if os.getenv("DEBUG_OPENAI_HTTP") == "1":
+        def _log_request(request: httpx.Request) -> None:
+            print(f"{CLI_BLUE}OPENAI REQUEST{CLI_CLR}: {request.method} {request.url}")
+
+        http_client = httpx.Client(event_hooks={"request": [_log_request]})
+
+    return OpenAI(
+        base_url="http://hackathon-proxy.westeurope.azurecontainer.io:3000/v1",
+        api_key=os.environ["PROXY_API_KEY"],
+        http_client=http_client,
+    )
+
+
 def _parse_with_retry(client: OpenAI, **kwargs):
     """Call client.chat.completions.parse with exponential backoff on rate limits."""
     for attempt in range(_RATE_LIMIT_MAX_RETRIES):
@@ -461,7 +477,7 @@ def _parse_with_retry(client: OpenAI, **kwargs):
 
 
 def run_agent(model: str, harness_url: str, task_text: str) -> dict[str, float]:
-    client = OpenAI()
+    client = _build_openai_client()
     vm = PcmRuntimeClientSync(harness_url)
     llm_totals = {
         "prompt_tokens": 0.0,
@@ -570,11 +586,13 @@ def run_agent(model: str, harness_url: str, task_text: str) -> dict[str, float]:
         record_llm_metadata(model, llm_totals)
         elapsed_ms = int((time.time() - started) * 1000)
         job = resp.choices[0].message.parsed
+        response_model = getattr(resp, "model", None) or model
 
         print(job.plan_remaining_steps_brief[0], f"({elapsed_ms} ms)\n  {job.function}")
         print(
             "  "
             f"{CLI_BLUE}LLM{CLI_CLR}: "
+            f"model={response_model} "
             f"prompt={int(usage_summary['prompt_tokens'])} "
             f"completion={int(usage_summary['completion_tokens'])} "
             f"total={int(usage_summary['total_tokens'])} "
