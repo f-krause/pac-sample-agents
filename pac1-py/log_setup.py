@@ -1,7 +1,7 @@
 """
 File-based logging for parallel task runs.
 
-Sets up a per-run directory under docs/logs/<timestamp>_<githash>/
+Sets up a per-run directory under data/logs/<timestamp>_<githash>/
 and provides a thread-local TeeWriter so each task's output goes
 to both stdout (with colours) and its own <task_id>.log file
 (ANSI-stripped, with timestamp and level prefix).
@@ -109,7 +109,7 @@ class _TeeWriter:
 
 def setup_run_log_dir(*, debug: bool = False) -> Path:
     """
-    Create docs/logs/<timestamp>_<githash>-{full,debug}-run/ and install the
+    Create data/logs/<timestamp>_<githash>-{full,debug}-run/ and install the
     TeeWriter on sys.stdout (idempotent — safe to call multiple times).
 
     The full-run / debug-run suffix mirrors the MLflow experiment naming so
@@ -122,7 +122,7 @@ def setup_run_log_dir(*, debug: bool = False) -> Path:
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     git_hash = _get_git_hash()
     run_kind = "debug-run" if debug else "full-run"
-    run_dir = Path(__file__).parent / "docs" / "logs" / f"{timestamp}_{git_hash}-{run_kind}"
+    run_dir = Path(__file__).parent / "data" / "logs" / f"{timestamp}_{git_hash}-{run_kind}"
     run_dir.mkdir(parents=True, exist_ok=True)
 
     if not isinstance(sys.stdout, _TeeWriter):

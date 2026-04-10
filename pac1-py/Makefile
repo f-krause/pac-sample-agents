@@ -37,4 +37,4 @@ mlflow:
 
 # List recent run log directories
 logs:
-	@ls -lt docs/logs/ | grep '^d' | head -20
+	@ls -lt data/logs/ | grep '^d' | head -20
