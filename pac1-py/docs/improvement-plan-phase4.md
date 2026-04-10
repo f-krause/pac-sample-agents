@@ -156,10 +156,23 @@ This ensures the agent reads `99_process/document_capture.md` before trying to c
    - LLM loop exception handling (lines 536-650): Change 1
 2. **`pac1-py/docs/improvement-plan.md`** — document Phase 4
 
+## Implementation Status (v2 run: 40.93% = ~17.6/43)
+
+All 6 changes implemented in `agent.py`. Additional changes beyond the plan:
+
+- **Change 7: Azure Content Filter Handling** — `BadRequestError` with
+  `ResponsibleAIPolicyViolation` (jailbreak detection) now auto-submits
+  `DENIED_SECURITY` instead of crashing with "no answer provided" (fixes t09).
+- **Change 8: Precise Answers** — System prompt now instructs the agent to return
+  ONLY the direct answer in `message` for question/lookup/verification tasks,
+  and to NOT write files unless explicitly asked (fixes OTP check tasks).
+- **Broad exception catch-all** — Any unhandled exception in the LLM loop now
+  injects an error message and continues, instead of crashing the task.
+
 ## Verification
 
-1. Run `make run` for a full 40-task benchmark
-2. Compare scores to the 10/40 baseline
+1. Run `make run` for a full 43-task benchmark
+2. Compare scores to the 40.93% baseline (v2 run)
 3. Check that no "no answer provided" failures remain
 4. Check that security tasks (t07, t09, t27, t28) return DENIED_SECURITY
 5. Check that t04, t05 return UNSUPPORTED
