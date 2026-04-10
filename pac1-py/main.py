@@ -10,6 +10,7 @@ from bitgn.harness_pb2 import EndTrialRequest, SubmitRunRequest, EvalPolicy, Sta
 from connectrpc.errors import ConnectError
 
 from agent import run_agent
+from log_setup import setup_run_log_dir, task_log, run_log
 from tracing import (
     init_tracing,
     trace_run,
@@ -33,7 +34,12 @@ CLI_CLR = "\x1B[0m"
 CLI_BLUE = "\x1B[34m"
 
 
-def run_task(task, client, lock, scores, run_llm_totals):
+def run_task(task, client, lock, scores, run_llm_totals, log_dir):
+    with task_log(task.task_id, log_dir):
+        _run_task_inner(task, client, lock, scores, run_llm_totals)
+
+
+def _run_task_inner(task, client, lock, scores, run_llm_totals):
     print(f"{'=' * 30} Starting task: {task.task_id} {'=' * 30}")
     trial = client.start_playground(
         StartPlaygroundRequest(
@@ -72,6 +78,9 @@ def main() -> None:
     task_filter = os.sys.argv[1:]
     is_debug = bool(task_filter)
 
+    log_dir = setup_run_log_dir()
+    print(f"Logging run to: {log_dir}")
+
     init_tracing(debug=is_debug)
 
     scores = []
@@ -86,68 +95,69 @@ def main() -> None:
     }
     lock = threading.Lock()
 
-    try:
-        client = HarnessServiceClientSync(BITGN_URL)
+    with run_log(log_dir):
+        try:
+            client = HarnessServiceClientSync(BITGN_URL)
 
-        print("Connecting to BitGN", client.status(StatusRequest()))
-        res = client.get_benchmark(GetBenchmarkRequest(benchmark_id=BENCH_ID))
-        print(
-            f"{EvalPolicy.Name(res.policy)} benchmark: {res.benchmark_id} "
-            f"with {len(res.tasks)} tasks.\n{CLI_GREEN}{res.description}{CLI_CLR}"
-        )
-
-        active_tasks = [t for t in res.tasks if not task_filter or t.task_id in task_filter]
-        workers = min(WORKERS, len(active_tasks)) if active_tasks else 1
-        print(f"Running {len(active_tasks)} tasks with {workers} parallel workers.")
-
-        with trace_run(
-            model_id=MODEL_ID,
-            benchmark_id=BENCH_ID,
-            task_count=len(active_tasks),
-            debug=is_debug,
-        ):
-            run_started_at = time.perf_counter()
-
-            with ThreadPoolExecutor(max_workers=workers) as executor:
-                futures = {
-                    executor.submit(run_task, task, client, lock, scores, run_llm_totals): task
-                    for task in active_tasks
-                }
-                for future in as_completed(futures):
-                    task = futures[future]
-                    try:
-                        future.result()
-                    except Exception as exc:
-                        print(f"{CLI_RED}Task {task.task_id} failed: {exc}{CLI_CLR}")
-
-            record_run_llm_totals(
-                MODEL_ID,
-                run_llm_totals,
-                runtime_seconds=time.perf_counter() - run_started_at,
+            print("Connecting to BitGN", client.status(StatusRequest()))
+            res = client.get_benchmark(GetBenchmarkRequest(benchmark_id=BENCH_ID))
+            print(
+                f"{EvalPolicy.Name(res.policy)} benchmark: {res.benchmark_id} "
+                f"with {len(res.tasks)} tasks.\n{CLI_GREEN}{res.description}{CLI_CLR}"
             )
 
-    except ConnectError as exc:
-        print(f"{exc.code}: {exc.message}")
-    except KeyboardInterrupt:
-        print(f"{CLI_RED}Interrupted{CLI_CLR}")
+            active_tasks = [t for t in res.tasks if not task_filter or t.task_id in task_filter]
+            workers = min(WORKERS, len(active_tasks)) if active_tasks else 1
+            print(f"Running {len(active_tasks)} tasks with {workers} parallel workers.")
 
-    if scores:
-        record_experiment_score_summary(scores)
-        for task_id, score in scores:
-            style = CLI_GREEN if score == 1 else CLI_RED
-            print(f"{task_id}: {style}{score:0.2f}{CLI_CLR}")
+            with trace_run(
+                model_id=MODEL_ID,
+                benchmark_id=BENCH_ID,
+                task_count=len(active_tasks),
+                debug=is_debug,
+            ):
+                run_started_at = time.perf_counter()
 
-        total = sum(score for _, score in scores) / len(scores) * 100.0
-        print(f"FINAL: {total:0.2f}%")
+                with ThreadPoolExecutor(max_workers=workers) as executor:
+                    futures = {
+                        executor.submit(run_task, task, client, lock, scores, run_llm_totals, log_dir): task
+                        for task in active_tasks
+                    }
+                    for future in as_completed(futures):
+                        task = futures[future]
+                        try:
+                            future.result()
+                        except Exception as exc:
+                            print(f"{CLI_RED}Task {task.task_id} failed: {exc}{CLI_CLR}")
 
-    print(
-        "FULL RUN LLM:"
-        f" prompt={int(run_llm_totals['prompt_tokens'])}"
-        f" completion={int(run_llm_totals['completion_tokens'])}"
-        f" total={int(run_llm_totals['total_tokens'])}"
-        f" cached={int(run_llm_totals['cached_prompt_tokens'])}"
-        f" cost=${run_llm_totals['cost_usd']:.6f}"
-    )
+                record_run_llm_totals(
+                    MODEL_ID,
+                    run_llm_totals,
+                    runtime_seconds=time.perf_counter() - run_started_at,
+                )
+
+        except ConnectError as exc:
+            print(f"{exc.code}: {exc.message}")
+        except KeyboardInterrupt:
+            print(f"{CLI_RED}Interrupted{CLI_CLR}")
+
+        if scores:
+            record_experiment_score_summary(scores)
+            for task_id, score in scores:
+                style = CLI_GREEN if score == 1 else CLI_RED
+                print(f"{task_id}: {style}{score:0.2f}{CLI_CLR}")
+
+            total = sum(score for _, score in scores) / len(scores) * 100.0
+            print(f"FINAL: {total:0.2f}%")
+
+        print(
+            "FULL RUN LLM:"
+            f" prompt={int(run_llm_totals['prompt_tokens'])}"
+            f" completion={int(run_llm_totals['completion_tokens'])}"
+            f" total={int(run_llm_totals['total_tokens'])}"
+            f" cached={int(run_llm_totals['cached_prompt_tokens'])}"
+            f" cost=${run_llm_totals['cost_usd']:.6f}"
+        )
 
 
 if __name__ == "__main__":

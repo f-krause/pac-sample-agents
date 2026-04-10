@@ -1,7 +1,7 @@
 # AICODE-NOTE: Keep these wrappers aligned with the README commands so the sample
 # stays trivial to run from a fresh checkout without inventing parallel workflows.
 
-.PHONY: sync run run-http-debug task collect collect-runs collect-debug mlflow
+.PHONY: sync run run-http-debug task collect collect-runs collect-debug mlflow logs
 
 sync:
 	uv sync
@@ -34,3 +34,7 @@ collect-debug:
 # Launch MLflow UI to browse traces (uses SQLite store in data/mlflow.db)
 mlflow:
 	uv run mlflow ui --backend-store-uri sqlite:///data/mlflow.db
+
+# List recent run log directories
+logs:
+	@ls -lt docs/logs/ | grep '^d' | head -20
