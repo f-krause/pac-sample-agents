@@ -4,7 +4,7 @@ import time
 from dotenv import load_dotenv
 
 from bitgn.harness_connect import HarnessServiceClientSync
-from bitgn.harness_pb2 import EndTrialRequest, EvalPolicy, GetBenchmarkRequest, StartPlaygroundRequest, StatusRequest
+from bitgn.harness_pb2 import EndTrialRequest, SubmitRunRequest, EvalPolicy, StartTrialRequest, GetTrialRequest, GetBenchmarkRequest, StartPlaygroundRequest, StatusRequest, StartRunRequest
 from connectrpc.errors import ConnectError
 
 from agent import run_agent
@@ -19,8 +19,9 @@ from tracing import (
 
 load_dotenv()
 
-BITGN_URL = os.getenv("BENCHMARK_HOST") or "https://api.bitgn.com"
-BENCHMARK_ID = os.getenv("BENCHMARK_ID") or "bitgn/pac1-dev"
+BITGN_URL = os.getenv("BITGN_HOST") or "https://api.bitgn.com"
+BITGN_API_KEY = os.getenv("BITGN_API_KEY") or ""
+BENCH_ID = os.getenv("BENCH_ID") or "bitgn/pac1-dev"
 MODEL_ID = os.getenv("MODEL_ID") or "gpt-4.1-2025-04-14"
 
 CLI_RED = "\x1B[31m"
@@ -47,8 +48,9 @@ def main() -> None:
     }
     try:
         client = HarnessServiceClientSync(BITGN_URL)
+
         print("Connecting to BitGN", client.status(StatusRequest()))
-        res = client.get_benchmark(GetBenchmarkRequest(benchmark_id=BENCHMARK_ID))
+        res = client.get_benchmark(GetBenchmarkRequest(benchmark_id=BENCH_ID))
         print(
             f"{EvalPolicy.Name(res.policy)} benchmark: {res.benchmark_id} "
             f"with {len(res.tasks)} tasks.\n{CLI_GREEN}{res.description}{CLI_CLR}"
@@ -58,7 +60,7 @@ def main() -> None:
 
         with trace_run(
             model_id=MODEL_ID,
-            benchmark_id=BENCHMARK_ID,
+            benchmark_id=BENCH_ID,
             task_count=len(active_tasks),
             debug=is_debug,
         ):
@@ -67,7 +69,7 @@ def main() -> None:
                 print(f"{'=' * 30} Starting task: {task.task_id} {'=' * 30}")
                 trial = client.start_playground(
                     StartPlaygroundRequest(
-                        benchmark_id=BENCHMARK_ID,
+                        benchmark_id=BENCH_ID,
                         task_id=task.task_id,
                     )
                 )
