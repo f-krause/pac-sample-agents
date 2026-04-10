@@ -6,8 +6,9 @@
 sync:
 	uv sync
 
+# usage: make run [WORKERS=16]
 run:
-	uv run python main.py
+	WORKERS=$(or $(WORKERS),16) uv run python main.py
 
 run-http-debug:
 	DEBUG_OPENAI_HTTP=1 uv run python main.py $(TASKS)

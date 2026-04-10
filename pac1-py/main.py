@@ -1,6 +1,8 @@
 import os
 import textwrap
 import time
+import threading
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from dotenv import load_dotenv
 
 from bitgn.harness_connect import HarnessServiceClientSync
@@ -23,11 +25,47 @@ BITGN_URL = os.getenv("BITGN_HOST") or "https://api.bitgn.com"
 BITGN_API_KEY = os.getenv("BITGN_API_KEY") or ""
 BENCH_ID = os.getenv("BENCH_ID") or "bitgn/pac1-dev"
 MODEL_ID = os.getenv("MODEL_ID") or "gpt-4.1-2025-04-14"
+WORKERS = int(os.getenv("WORKERS") or "16")
 
 CLI_RED = "\x1B[31m"
 CLI_GREEN = "\x1B[32m"
 CLI_CLR = "\x1B[0m"
 CLI_BLUE = "\x1B[34m"
+
+
+def run_task(task, client, lock, scores, run_llm_totals):
+    print(f"{'=' * 30} Starting task: {task.task_id} {'=' * 30}")
+    trial = client.start_playground(
+        StartPlaygroundRequest(
+            benchmark_id=BENCH_ID,
+            task_id=task.task_id,
+        )
+    )
+
+    print(f"{CLI_BLUE}{trial.instruction}{CLI_CLR}\n{'-' * 80}")
+
+    with trace_task(task.task_id, trial.instruction) as task_run:
+        task_llm_totals = None
+        try:
+            task_llm_totals = run_agent(MODEL_ID, trial.harness_url, trial.instruction)
+        except Exception as exc:
+            import mlflow
+            mlflow.log_param("task_error", str(exc)[:250])
+            print(exc)
+        finally:
+            if task_llm_totals is not None:
+                with lock:
+                    for key in run_llm_totals:
+                        run_llm_totals[key] += task_llm_totals.get(key, 0.0)
+
+        result = client.end_trial(EndTrialRequest(trial_id=trial.trial_id))
+        if result.score >= 0:
+            with lock:
+                scores.append((task.task_id, result.score))
+            record_task_score(task_run, task.task_id, result.score, list(result.score_detail))
+            style = CLI_GREEN if result.score == 1 else CLI_RED
+            explain = textwrap.indent("\n".join(result.score_detail), "  ")
+            print(f"\n{style}Score: {result.score:0.2f}\n{explain}\n{CLI_CLR}")
 
 
 def main() -> None:
@@ -46,6 +84,8 @@ def main() -> None:
         "output_cost_usd": 0.0,
         "cost_usd": 0.0,
     }
+    lock = threading.Lock()
+
     try:
         client = HarnessServiceClientSync(BITGN_URL)
 
@@ -57,6 +97,8 @@ def main() -> None:
         )
 
         active_tasks = [t for t in res.tasks if not task_filter or t.task_id in task_filter]
+        workers = min(WORKERS, len(active_tasks)) if active_tasks else 1
+        print(f"Running {len(active_tasks)} tasks with {workers} parallel workers.")
 
         with trace_run(
             model_id=MODEL_ID,
@@ -65,37 +107,18 @@ def main() -> None:
             debug=is_debug,
         ):
             run_started_at = time.perf_counter()
-            for task in active_tasks:
-                print(f"{'=' * 30} Starting task: {task.task_id} {'=' * 30}")
-                trial = client.start_playground(
-                    StartPlaygroundRequest(
-                        benchmark_id=BENCH_ID,
-                        task_id=task.task_id,
-                    )
-                )
 
-                print(f"{CLI_BLUE}{trial.instruction}{CLI_CLR}\n{'-' * 80}")
-
-                with trace_task(task.task_id, trial.instruction) as task_run:
-                    task_llm_totals = None
+            with ThreadPoolExecutor(max_workers=workers) as executor:
+                futures = {
+                    executor.submit(run_task, task, client, lock, scores, run_llm_totals): task
+                    for task in active_tasks
+                }
+                for future in as_completed(futures):
+                    task = futures[future]
                     try:
-                        task_llm_totals = run_agent(MODEL_ID, trial.harness_url, trial.instruction)
+                        future.result()
                     except Exception as exc:
-                        import mlflow
-                        mlflow.log_param("task_error", str(exc)[:250])
-                        print(exc)
-                    finally:
-                        if task_llm_totals is not None:
-                            for key in run_llm_totals:
-                                run_llm_totals[key] += task_llm_totals.get(key, 0.0)
-
-                    result = client.end_trial(EndTrialRequest(trial_id=trial.trial_id))
-                    if result.score >= 0:
-                        scores.append((task.task_id, result.score))
-                        record_task_score(task_run, task.task_id, result.score, list(result.score_detail))
-                        style = CLI_GREEN if result.score == 1 else CLI_RED
-                        explain = textwrap.indent("\n".join(result.score_detail), "  ")
-                        print(f"\n{style}Score: {result.score:0.2f}\n{explain}\n{CLI_CLR}")
+                        print(f"{CLI_RED}Task {task.task_id} failed: {exc}{CLI_CLR}")
 
             record_run_llm_totals(
                 MODEL_ID,
