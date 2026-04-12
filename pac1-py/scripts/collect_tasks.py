@@ -5,9 +5,10 @@ Usage:
     python collect_tasks.py [task_id ...]   # optional filter by task id
     python collect_tasks.py --runs N        # repeat N times to capture entropy variants
 
-Each run starts a playground trial per task, captures the initial environment
-(instruction, context, file tree, root listing, key file contents), then ends
-the trial.  Snapshots are saved as JSON files under:
+Each run creates a scored run via the BitGN API, starts each trial, captures
+the initial environment (instruction, context, file tree, root listing, key
+file contents), then ends the trial and submits the run.  Snapshots are saved
+as JSON files under:
 
     data/tasks/<task_id>/<sha256_of_content>.json
 
@@ -27,7 +28,9 @@ from bitgn.harness_connect import HarnessServiceClientSync
 from bitgn.harness_pb2 import (
     EndTrialRequest,
     GetBenchmarkRequest,
-    StartPlaygroundRequest,
+    StartRunRequest,
+    StartTrialRequest,
+    SubmitRunRequest,
     StatusRequest,
 )
 from bitgn.vm.pcm_connect import PcmRuntimeClientSync
@@ -37,9 +40,10 @@ from google.protobuf.json_format import MessageToDict
 
 load_dotenv()
 
-BITGN_URL = os.getenv("BENCHMARK_HOST") or "https://api.bitgn.com"
-BENCHMARK_ID = os.getenv("BENCHMARK_ID") or "bitgn/pac1-dev"
-DATA_DIR = Path(__file__).parent / "data" / "tasks"
+BITGN_URL = os.getenv("BITGN_HOST") or "https://api.bitgn.com"
+BITGN_API_KEY = os.getenv("BITGN_API_KEY") or ""
+BENCHMARK_ID = os.getenv("BENCH_ID") or "bitgn/pac1-prod"
+DATA_DIR = Path(__file__).parent.parent / "data" / "tasks"
 
 CLI_RED = "\x1B[31m"
 CLI_GREEN = "\x1B[32m"
@@ -126,11 +130,19 @@ def capture_environment(vm: PcmRuntimeClientSync) -> dict:
         )
     ]
 
-    # 99_process/ files – "source of truth for repo processes"
+    # 99_process/ files – "source of truth for repo processes" (sandbox)
     process_paths = [p for p in all_paths if "99_process" in p and p.endswith(".md")]
 
+    # 99_system/ workflow and schema docs (production)
+    system_paths = [
+        p for p in all_paths
+        if ("99_system/workflows/" in p or "99_system/schemas/" in p)
+        and p.endswith(".md")
+        and p.split("/")[-1].upper() != "AGENTS.MD"  # already captured above
+    ]
+
     instruction_files: dict[str, str] = {}
-    for path in dict.fromkeys(agents_paths + extra_instruction_paths + process_paths):
+    for path in dict.fromkeys(agents_paths + extra_instruction_paths + process_paths + system_paths):
         content = _read_file(vm, path)
         if content is not None:
             instruction_files[path] = content
@@ -182,53 +194,64 @@ def save_snapshot(task_id: str, instruction: str, env: dict, benchmark_descripti
     return is_new, out_path
 
 
-def collect(task_filter: list[str], runs: int, limit: int | None = None) -> None:
+def collect(task_filter: list[str], runs: int) -> None:
     client = HarnessServiceClientSync(BITGN_URL)
     print("Connecting to BitGN:", client.status(StatusRequest()))
 
     res = client.get_benchmark(GetBenchmarkRequest(benchmark_id=BENCHMARK_ID))
     benchmark_description = res.description
-    tasks = [t for t in res.tasks if not task_filter or t.task_id in task_filter]
-    if limit is not None:
-        tasks = tasks[:limit]
     print(
-        f"Benchmark {res.benchmark_id}: {len(tasks)} task(s), "
+        f"Benchmark {res.benchmark_id}: {len(res.tasks)} task(s) listed, "
         f"{runs} run(s) → capturing environment snapshots\n"
     )
 
     stats: dict[str, int] = {}  # task_id → new snapshots saved
 
-    for run in range(1, runs + 1):
-        print(f"{'─' * 60}  run {run}/{runs}")
-        for task in tasks:
-            tid = task.task_id
-            print(f"  [{tid}] starting trial... ", end="", flush=True)
+    for run_idx in range(1, runs + 1):
+        print(f"{'─' * 60}  run {run_idx}/{runs}")
 
-            try:
-                trial = client.start_playground(
-                    StartPlaygroundRequest(
-                        benchmark_id=BENCHMARK_ID,
-                        task_id=tid,
-                    )
-                )
-            except ConnectError as exc:
-                print(f"{CLI_RED}FAILED to start: {exc.message}{CLI_CLR}")
-                continue
+        try:
+            run = client.start_run(StartRunRequest(
+                name="collect_tasks snapshot",
+                benchmark_id=BENCHMARK_ID,
+                api_key=BITGN_API_KEY,
+            ))
+        except ConnectError as exc:
+            print(f"{CLI_RED}FAILED to start run: {exc.message}{CLI_CLR}")
+            continue
 
-            instruction = trial.instruction
-            vm = PcmRuntimeClientSync(trial.harness_url)
+        try:
+            for trial_id in run.trial_ids:
+                print(f"  [{trial_id}] starting trial... ", end="", flush=True)
 
-            env = capture_environment(vm)
+                try:
+                    trial = client.start_trial(StartTrialRequest(trial_id=trial_id))
+                except ConnectError as exc:
+                    print(f"{CLI_RED}FAILED to start: {exc.message}{CLI_CLR}")
+                    continue
 
-            try:
-                client.end_trial(EndTrialRequest(trial_id=trial.trial_id))
-            except ConnectError as exc:
-                print(f"{CLI_YELLOW}(end_trial warning: {exc.message}){CLI_CLR} ", end="")
+                tid = trial.task_id
+                if task_filter and tid not in task_filter:
+                    print(f"skipped (filter)")
+                    client.end_trial(EndTrialRequest(trial_id=trial.trial_id))
+                    continue
 
-            is_new, path = save_snapshot(tid, instruction, env, benchmark_description)
-            stats[tid] = stats.get(tid, 0) + (1 if is_new else 0)
-            label = f"{CLI_GREEN}NEW{CLI_CLR}" if is_new else "dup"
-            print(f"{label}  → {path.relative_to(Path.cwd()) if path.is_relative_to(Path.cwd()) else path}")
+                instruction = trial.instruction
+                vm = PcmRuntimeClientSync(trial.harness_url)
+
+                env = capture_environment(vm)
+
+                try:
+                    client.end_trial(EndTrialRequest(trial_id=trial.trial_id))
+                except ConnectError as exc:
+                    print(f"{CLI_YELLOW}(end_trial warning: {exc.message}){CLI_CLR} ", end="")
+
+                is_new, path = save_snapshot(tid, instruction, env, benchmark_description)
+                stats[tid] = stats.get(tid, 0) + (1 if is_new else 0)
+                label = f"{CLI_GREEN}NEW{CLI_CLR}" if is_new else "dup"
+                print(f"[{tid}] {label}  → {path.relative_to(Path.cwd()) if path.is_relative_to(Path.cwd()) else path}")
+        finally:
+            client.submit_run(SubmitRunRequest(run_id=run.run_id, force=True))
 
     print(f"\n{'=' * 60}")
     print("Summary – new unique snapshots saved:")
@@ -240,7 +263,6 @@ def collect(task_filter: list[str], runs: int, limit: int | None = None) -> None
 def main() -> None:
     args = sys.argv[1:]
     runs = 1
-    limit: int | None = None
     task_filter: list[str] = []
 
     i = 0
@@ -248,15 +270,12 @@ def main() -> None:
         if args[i] == "--runs" and i + 1 < len(args):
             runs = int(args[i + 1])
             i += 2
-        elif args[i] == "--limit" and i + 1 < len(args):
-            limit = int(args[i + 1])
-            i += 2
         else:
             task_filter.append(args[i])
             i += 1
 
     try:
-        collect(task_filter, runs, limit)
+        collect(task_filter, runs)
     except ConnectError as exc:
         print(f"{CLI_RED}{exc.code}: {exc.message}{CLI_CLR}")
         sys.exit(1)

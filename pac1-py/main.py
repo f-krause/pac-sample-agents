@@ -1,4 +1,5 @@
 import os
+import sys
 import textwrap
 import time
 import threading
@@ -6,7 +7,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from dotenv import load_dotenv
 
 from bitgn.harness_connect import HarnessServiceClientSync
-from bitgn.harness_pb2 import EndTrialRequest, SubmitRunRequest, EvalPolicy, StartTrialRequest, GetTrialRequest, GetBenchmarkRequest, StartPlaygroundRequest, StatusRequest, StartRunRequest
+from bitgn.harness_pb2 import EndTrialRequest, SubmitRunRequest, EvalPolicy, StartTrialRequest, GetBenchmarkRequest, StatusRequest, StartRunRequest
 from connectrpc.errors import ConnectError
 
 from agent import run_agent
@@ -24,7 +25,7 @@ load_dotenv()
 
 BITGN_URL = os.getenv("BITGN_HOST") or "https://api.bitgn.com"
 BITGN_API_KEY = os.getenv("BITGN_API_KEY") or ""
-BENCH_ID = os.getenv("BENCH_ID") or "bitgn/pac1-dev"
+BENCH_ID = os.getenv("BENCH_ID") or "bitgn/pac1-prod"
 MODEL_ID = os.getenv("MODEL_ID") or "gpt-4.1-2025-04-14"
 WORKERS = int(os.getenv("WORKERS") or "16")
 
@@ -34,23 +35,20 @@ CLI_CLR = "\x1B[0m"
 CLI_BLUE = "\x1B[34m"
 
 
-def run_task(task, client, lock, scores, run_llm_totals, log_dir):
-    with task_log(task.task_id, log_dir):
-        _run_task_inner(task, client, lock, scores, run_llm_totals)
+def run_task(trial_id, client, lock, scores, run_llm_totals, log_dir, task_filter=None):
+    trial = client.start_trial(StartTrialRequest(trial_id=trial_id))
+    if task_filter and trial.task_id not in task_filter:
+        return
+    with task_log(trial.task_id, log_dir):
+        _run_task_inner(trial, client, lock, scores, run_llm_totals)
 
 
-def _run_task_inner(task, client, lock, scores, run_llm_totals):
-    print(f"{'=' * 30} Starting task: {task.task_id} {'=' * 30}")
-    trial = client.start_playground(
-        StartPlaygroundRequest(
-            benchmark_id=BENCH_ID,
-            task_id=task.task_id,
-        )
-    )
+def _run_task_inner(trial, client, lock, scores, run_llm_totals):
+    print(f"{'=' * 30} Starting task: {trial.task_id} {'=' * 30}")
 
     print(f"{CLI_BLUE}{trial.instruction}{CLI_CLR}\n{'-' * 80}")
 
-    with trace_task(task.task_id, trial.instruction) as task_run:
+    with trace_task(trial.task_id, trial.instruction) as task_run:
         task_llm_totals = None
         try:
             task_llm_totals = run_agent(MODEL_ID, trial.harness_url, trial.instruction)
@@ -67,15 +65,15 @@ def _run_task_inner(task, client, lock, scores, run_llm_totals):
         result = client.end_trial(EndTrialRequest(trial_id=trial.trial_id))
         if result.score >= 0:
             with lock:
-                scores.append((task.task_id, result.score))
-            record_task_score(task_run, task.task_id, result.score, list(result.score_detail))
+                scores.append((trial.task_id, result.score))
+            record_task_score(task_run, trial.task_id, result.score, list(result.score_detail))
             style = CLI_GREEN if result.score == 1 else CLI_RED
             explain = textwrap.indent("\n".join(result.score_detail), "  ")
             print(f"\n{style}Score: {result.score:0.2f}\n{explain}\n{CLI_CLR}")
 
 
 def main() -> None:
-    task_filter = os.sys.argv[1:]
+    task_filter = sys.argv[1:]
     is_debug = bool(task_filter)
 
     log_dir = setup_run_log_dir(debug=is_debug)
@@ -106,35 +104,43 @@ def main() -> None:
                 f"with {len(res.tasks)} tasks.\n{CLI_GREEN}{res.description}{CLI_CLR}"
             )
 
-            active_tasks = [t for t in res.tasks if not task_filter or t.task_id in task_filter]
-            workers = min(WORKERS, len(active_tasks)) if active_tasks else 1
-            print(f"Running {len(active_tasks)} tasks with {workers} parallel workers.")
-
-            with trace_run(
-                model_id=MODEL_ID,
+            run = client.start_run(StartRunRequest(
+                name="FK-runs gpt 4.1",
                 benchmark_id=BENCH_ID,
-                task_count=len(active_tasks),
-                debug=is_debug,
-            ):
-                run_started_at = time.perf_counter()
+                api_key=BITGN_API_KEY))
 
-                with ThreadPoolExecutor(max_workers=workers) as executor:
-                    futures = {
-                        executor.submit(run_task, task, client, lock, scores, run_llm_totals, log_dir): task
-                        for task in active_tasks
-                    }
-                    for future in as_completed(futures):
-                        task = futures[future]
-                        try:
-                            future.result()
-                        except Exception as exc:
-                            print(f"{CLI_RED}Task {task.task_id} failed: {exc}{CLI_CLR}")
+            active_trial_ids = run.trial_ids
+            workers = min(WORKERS, len(active_trial_ids)) if active_trial_ids else 1
+            print(f"Running {len(active_trial_ids)} trials with {workers} parallel workers.")
 
-                record_run_llm_totals(
-                    MODEL_ID,
-                    run_llm_totals,
-                    runtime_seconds=time.perf_counter() - run_started_at,
-                )
+            try:
+                with trace_run(
+                    model_id=MODEL_ID,
+                    benchmark_id=BENCH_ID,
+                    task_count=len(active_trial_ids),
+                    debug=is_debug,
+                ):
+                    run_started_at = time.perf_counter()
+
+                    with ThreadPoolExecutor(max_workers=workers) as executor:
+                        futures = {
+                            executor.submit(run_task, trial_id, client, lock, scores, run_llm_totals, log_dir, task_filter): trial_id
+                            for trial_id in active_trial_ids
+                        }
+                        for future in as_completed(futures):
+                            trial_id = futures[future]
+                            try:
+                                future.result()
+                            except Exception as exc:
+                                print(f"{CLI_RED}Trial {trial_id} failed: {exc}{CLI_CLR}")
+
+                    record_run_llm_totals(
+                        MODEL_ID,
+                        run_llm_totals,
+                        runtime_seconds=time.perf_counter() - run_started_at,
+                    )
+            finally:
+                client.submit_run(SubmitRunRequest(run_id=run.run_id, force=True))
 
         except ConnectError as exc:
             print(f"{exc.code}: {exc.message}")
