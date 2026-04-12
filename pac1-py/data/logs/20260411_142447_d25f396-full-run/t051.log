@@ -1,0 +1,266 @@
+14:28:35.378 [INFO] ============================== Starting task: t051 ==============================
+14:28:35.378 [INFO] What is the start date of the project the bureau print parts project? Answer YYYY-MM-DD. Date only
+14:28:35.378 [INFO] --------------------------------------------------------------------------------
+14:28:35.695 [INFO] AUTO: tree -L 3 /
+14:28:35.695 [INFO] /
+14:28:35.695 [INFO] ├── 00_inbox
+14:28:35.695 [INFO] │   └── AGENTS.MD
+14:28:35.695 [INFO] ├── 10_entities
+14:28:35.695 [INFO] │   ├── AGENTS.MD
+14:28:35.695 [INFO] │   └── cast
+14:28:35.695 [INFO] │       ├── AGENTS.MD
+14:28:35.695 [INFO] │       ├── badger.md
+14:28:35.695 [INFO] │       ├── bix.md
+14:28:35.695 [INFO] │       ├── claudia.md
+14:28:35.695 [INFO] │       ├── elena.md
+14:28:35.695 [INFO] │       ├── foundry.md
+14:28:35.695 [INFO] │       ├── gregor.md
+14:28:35.695 [INFO] │       ├── hanna.md
+14:28:35.696 [INFO] │       ├── ida.md
+14:28:35.696 [INFO] │       ├── jana.md
+14:28:35.696 [INFO] │       ├── juniper.md
+14:28:35.696 [INFO] │       ├── lukas.md
+14:28:35.696 [INFO] │       ├── miles.md
+14:28:35.696 [INFO] │       ├── nina.md
+14:28:35.696 [INFO] │       ├── nora.md
+14:28:35.696 [INFO] │       ├── omar.md
+14:28:35.696 [INFO] │       ├── oskar.md
+14:28:35.696 [INFO] │       ├── pepper.md
+14:28:35.696 [INFO] │       ├── petra.md
+14:28:35.696 [INFO] │       ├── renate.md
+14:28:35.696 [INFO] │       ├── roman.md
+14:28:35.696 [INFO] │       ├── sara.md
+14:28:35.696 [INFO] │       └── tobias.md
+14:28:35.696 [INFO] ├── 20_work
+14:28:35.696 [INFO] │   ├── AGENTS.MD
+14:28:35.696 [INFO] │   ├── reminders
+14:28:35.696 [INFO] │   │   └── AGENTS.MD
+14:28:35.696 [INFO] │   └── tasks
+14:28:35.696 [INFO] │       └── AGENTS.MD
+14:28:35.696 [INFO] ├── 30_knowledge
+14:28:35.696 [INFO] │   ├── AGENTS.MD
+14:28:35.696 [INFO] │   ├── capture
+14:28:35.696 [INFO] │   │   ├── agent-control-planes-and-runtime-shape.md
+14:28:35.696 [INFO] │   │   ├── agent-skills-for-onboarding.md
+14:28:35.696 [INFO] │   │   ├── AGENTS.MD
+14:28:35.696 [INFO] │   │   ├── assistant-virtual-filesystem.md
+14:28:35.696 [INFO] │   │   ├── delightful-frontends-with-gpt.md
+14:28:35.696 [INFO] │   │   ├── integration-agents-need-guardrails.md
+14:28:35.696 [INFO] │   │   ├── knowledge-agents-with-filesystems.md
+14:28:35.696 [INFO] │   │   ├── managed-agents-at-production-scale.md
+14:28:35.696 [INFO] │   │   ├── mcp-market-gap-is-trust.md
+14:28:35.696 [INFO] │   │   ├── nemoclaw-overview.md
+14:28:35.696 [INFO] │   │   ├── persistent-llm-wiki.md
+14:28:35.696 [INFO] │   │   └── project-glasswing.md
+14:28:35.696 [INFO] │   ├── notes
+14:28:35.696 [INFO] │   │   ├── AGENTS.MD
+14:28:35.696 [INFO] │   │   ├── design-constraints-for-a-household-assistant.md
+14:28:35.696 [INFO] │   │   ├── parking-lot.md
+14:28:35.696 [INFO] │   │   ├── what-i-want-help-with-and-what-stays-mine.md
+14:28:35.696 [INFO] │   │   └── why-i-keep-coming-back-to-a-personal-assistant.md
+14:28:35.696 [INFO] │   └── threads
+14:28:35.696 [INFO] │       └── AGENTS.MD
+14:28:35.696 [INFO] ├── 40_projects
+14:28:35.696 [INFO] │   ├── 2026_04_02_hearthline
+14:28:35.696 [INFO] │   │   └── README.MD
+14:28:35.696 [INFO] │   ├── 2026_04_02_house_mesh
+14:28:35.696 [INFO] │   │   └── README.MD
+14:28:35.696 [INFO] │   ├── 2026_04_02_northstar_ledger
+14:28:35.696 [INFO] │   │   └── README.MD
+14:28:35.696 [ERROR] │   ├── 2026_04_24_dockflow_exception_radar
+14:28:35.696 [INFO] │   │   └── README.MD
+14:28:35.696 [INFO] │   ├── 2026_04_27_studio_parts_library
+14:28:35.696 [INFO] │   │   └── README.MD
+14:28:35.697 [INFO] │   ├── 2026_04_30_helios_workflow_sprint
+14:28:35.697 [INFO] │   │   └── README.MD
+14:28:35.697 [INFO] │   ├── 2026_05_02_black_library_evenings
+14:28:35.697 [INFO] │   │   └── README.MD
+14:28:35.697 [INFO] │   ├── 2026_05_02_harbor_body
+14:28:35.697 [INFO] │   │   └── README.MD
+14:28:35.697 [INFO] │   ├── 2026_05_02_toy_forge_saturdays
+14:28:35.697 [INFO] │   │   └── README.MD
+14:28:35.697 [INFO] │   ├── 2026_05_03_reading_spine
+14:28:35.697 [INFO] │   │   └── README.MD
+14:28:35.697 [INFO] │   ├── 2026_05_03_repair_ledger
+14:28:35.697 [INFO] │   │   └── README.MD
+14:28:35.697 [INFO] │   ├── 2026_05_03_school_helper_kit
+14:28:35.697 [INFO] │   │   └── README.MD
+14:28:35.697 [INFO] │   ├── 2026_05_05_family_map_wall
+14:28:35.697 [INFO] │   │   └── README.MD
+14:28:35.697 [INFO] │   ├── 2026_05_05_window_farm_notes
+14:28:35.697 [INFO] │   │   └── README.MD
+14:28:35.697 [INFO] │   └── AGENTS.MD
+14:28:35.697 [INFO] ├── 50_finance
+14:28:35.697 [INFO] │   ├── AGENTS.MD
+14:28:35.697 [INFO] │   ├── invoices
+14:28:35.697 [INFO] │   │   ├── 2025_11_04__eur_000610__inv_0001__northstar_backfill_alpha.md
+14:28:35.697 [INFO] │   │   ├── 2025_12_02__eur_000770__inv_0002__northstar_backfill_beta.md
+14:28:35.697 [INFO] │   │   ├── 2025_12_18__eur_000520__inv_0006__helios_backfill_intake_audit.md
+14:28:35.697 [INFO] │   │   ├── 2025_12_30__eur_000530__inv_0003__northstar_backfill_gamma.md
+14:28:35.697 [INFO] │   │   ├── 2026_01_19__eur_000760__inv_0007__helios_backfill_process_pack.md
+14:28:35.697 [INFO] │   │   ├── 2026_02_14__eur_000890__inv_0004__northstar_design_partner_sprint.md
+14:28:35.697 [INFO] │   │   ├── 2026_02_17__eur_000610__inv_0008__helios_backfill_rollout_week.md
+14:28:35.697 [INFO] │   │   ├── 2026_03_20__eur_000600__inv_0009__helios_discovery_invoice.md
+14:28:35.697 [INFO] │   │   ├── 2026_03_26__eur_000420__inv_0005__northstar_followup_pack.md
+14:28:35.697 [INFO] │   │   ├── 2026_04_21__eur_000780__inv_0010__helios_checklist_pack_invoice.md
+14:28:35.697 [INFO] │   │   ├── 2026_04_27__eur_000550__inv_0011__helios_followup_support_invoice.md
+14:28:35.697 [INFO] │   │   └── AGENTS.MD
+14:28:35.697 [INFO] │   └── purchases
+14:28:35.697 [INFO] │       ├── 2025_12_05__eur_000044__bill__house_mesh_esp32_order.md
+14:28:35.697 [INFO] │       ├── 2025_12_11__eur_000072__bill__toy_forge_pla_bundle.md
+14:28:35.697 [INFO] │       ├── 2025_12_27__eur_000066__bill__hearthline_epaper_panel.md
+14:28:35.697 [INFO] │       ├── 2026_01_03__eur_000032__bill__repair_ledger_faucet_parts.md
+14:28:35.697 [INFO] │       ├── 2026_01_19__eur_000030__bill__northstar_domain_and_mail.md
+14:28:35.697 [INFO] │       ├── 2026_01_31__eur_000050__bill__hearthline_sensor_bundle.md
+14:28:35.697 [INFO] │       ├── 2026_02_02__eur_000080__bill__studio_parts_petg_batch.md
+14:28:35.697 [INFO] │       ├── 2026_02_14__eur_000105__bill__house_mesh_juniper_ssd.md
+14:28:35.697 [INFO] │       ├── 2026_03_02__eur_000036__bill__family_map_wall_board.md
+14:28:35.697 [INFO] │       ├── 2026_03_05__eur_000033__bill__studio_parts_nozzle_and_inserts.md
+14:28:35.697 [INFO] │       ├── 2026_03_07__eur_000022__bill__house_mesh_esp32_topup.md
+14:28:35.697 [INFO] │       ├── 2026_03_24__eur_000022__bill__toy_forge_wheel_and_magnet_pack.md
+14:28:35.697 [INFO] │       ├── 2026_03_31__eur_000025__bill__school_helper_label_tape.md
+14:28:35.697 [INFO] │       ├── 2026_04_01__eur_000089__bill__black_library_terrain_spool.md
+14:28:35.697 [INFO] │       ├── 2026_04_09__eur_000029__bill__repair_ledger_filter_order.md
+14:28:35.697 [INFO] │       ├── 2026_04_11__eur_000020__bill__studio_parts_magnet_and_felt.md
+14:28:35.697 [INFO] │       ├── 2026_04_14__eur_000027__bill__window_farm_starter_tray.md
+14:28:35.697 [INFO] │       └── AGENTS.MD
+14:28:35.697 [INFO] ├── 60_outbox
+14:28:35.698 [INFO] │   ├── AGENTS.MD
+14:28:35.698 [INFO] │   ├── channels
+14:28:35.698 [INFO] │   │   ├── AGENTS.MD
+14:28:35.698 [INFO] │   │   ├── dockflow_ops_slack.md
+14:28:35.698 [INFO] │   │   ├── grimdark_discord.md
+14:28:35.698 [INFO] │   │   ├── health_signal.md
+14:28:35.698 [INFO] │   │   ├── helios_client_email.md
+14:28:35.698 [INFO] │   │   ├── household_calendar.md
+14:28:35.698 [INFO] │   │   ├── household_signal.md
+14:28:35.698 [INFO] │   │   ├── northstar_email.md
+14:28:35.698 [INFO] │   │   ├── studio_signal.md
+14:28:35.698 [INFO] │   │   └── work_calendar.md
+14:28:35.698 [INFO] │   ├── drafts
+14:28:35.698 [INFO] │   │   └── AGENTS.MD
+14:28:35.698 [INFO] │   └── outbox
+14:28:35.698 [INFO] │       └── AGENTS.MD
+14:28:35.698 [INFO] ├── 90_memory
+14:28:35.698 [INFO] │   └── AGENTS.MD
+14:28:35.698 [INFO] ├── 99_system
+14:28:35.698 [INFO] │   ├── AGENTS.MD
+14:28:35.698 [INFO] │   ├── schemas
+14:28:35.698 [INFO] │   │   ├── AGENTS.MD
+14:28:35.698 [INFO] │   │   ├── bulk-processing-and-queueing-frontmatter.md
+14:28:35.698 [INFO] │   │   └── finance-record-frontmatter.md
+14:28:35.698 [INFO] │   └── workflows
+14:28:35.698 [INFO] │       ├── AGENTS.MD
+14:28:35.698 [INFO] │       ├── deletion-and-wiping.md
+14:28:35.698 [INFO] │       ├── inbox-processing-v2-update.md
+14:28:35.698 [INFO] │       ├── migrate-records-to-frontmatter.md
+14:28:35.698 [INFO] │       ├── migrating-to-nora-mcp.md
+14:28:35.698 [INFO] │       ├── ocr-records.md
+14:28:35.698 [INFO] │       ├── process-next-inbox-item.md
+14:28:35.698 [INFO] │       ├── processing-inbox-email.md
+14:28:35.698 [INFO] │       └── sending-email.md
+14:28:35.698 [INFO] └── AGENTS.MD
+14:28:35.837 [INFO] AUTO: cat AGENTS.md
+14:28:35.837 [INFO] Be pragmatic. This is one Obsidian-style personal workspace for Miles's household, work, startup, and project life.
+
+14:28:35.837 [INFO] Key locations:
+
+14:28:35.837 [INFO] - `00_inbox/`: unprocessed drops and requests
+14:28:35.837 [INFO] - `10_entities/cast/`: canonical people, pets, and named systems
+14:28:35.837 [INFO] - `20_work/`: reminders and active tasks
+14:28:35.837 [INFO] - `30_knowledge/`: capture, notes, and threads
+14:28:35.837 [INFO] - `40_projects/`: concrete project folders and artifacts; folder names start with the project creation date as `YYYY_MM_DD_`, and the canonical project record is `README.MD` inside each folder
+14:28:35.837 [INFO] - `50_finance/`: invoices and purchases
+14:28:35.837 [INFO] - `60_outbox/`: channel trust docs, drafts, and outbound state
+14:28:35.837 [INFO] - `90_memory/`: assistant memory and story/history surfaces
+14:28:35.837 [INFO] - `99_system/`: workflows and schemas
+
+14:28:35.837 [INFO] Rules:
+
+14:28:35.837 [INFO] - Read nested `AGENTS.MD` files when you enter a folder.
+14:28:35.837 [INFO] - Before starting task work, inspect `99_system/` with `tree` and then read the relevant workflow or schema docs there.
+14:28:35.837 [INFO] - Records are gradually migrating toward YAML frontmatter so they stay easy to browse in Obsidian while carrying structured fields for automation.
+14:28:35.837 [INFO] - The migration period can be a little messy in the short term because older notes and newer structured notes may coexist, but the long-term goal is to streamline the workspace and clean up record handling.
+14:28:35.838 [INFO] - If a task asks you to add or repair structured metadata on an existing note, first look in `99_system/workflows/` for the current migration guidance, then discover the matching shape doc under `99_system/schemas/`.
+14:28:35.838 [INFO] - Entity files in `10_entities/cast/` are authoritative for identity, `primary_contact_email` when present, and birthdays when present.
+14:28:35.838 [INFO] - If the relevant canonical file does not show the needed fact, ask for clarification instead of guessing.
+14:28:35.838 [INFO] - Keep changes focused and preserve lane boundaries across household, day job, client, startup, and hobby contexts.
+
+14:28:35.968 [INFO] AUTO: {
+14:28:35.968 [INFO]   "unixTime": "1774974720",
+14:28:35.968 [INFO]   "time": "2026-03-31T16:32:00Z"
+14:28:35.968 [INFO] }
+14:28:36.117 [INFO] AUTO-DOC: cat 99_system/workflows/AGENTS.MD
+14:28:36.117 [INFO] `99_system/workflows/` describes how work should move through the vault.
+
+14:28:36.117 [INFO] - Before starting task work, inspect all files under `99_system/` with `tree` so you know wh...
+14:28:36.267 [INFO] AUTO-DOC: cat 10_entities/cast/AGENTS.MD
+14:28:36.267 [INFO] `10_entities/cast/` holds the canonical records for people, pets, and named systems in Miles's world.
+
+14:28:36.267 [INFO] - Each file is authoritative for relationship, birthday when prese...
+14:28:36.475 [INFO] AUTO-DOC: cat 10_entities/AGENTS.MD
+14:28:36.475 [INFO] `10_entities/` stores durable identity records.
+
+14:28:36.475 [INFO] - Use this lane to resolve who or what something refers to before acting elsewhere.
+14:28:36.475 [INFO] - Canonical identity lives below this fol...
+14:28:38.514 [INFO] Next step_1... Search for 'bureau print parts' in 40_projects/ (2038 ms)
+14:28:38.514 [INFO]   tool='search' pattern='bureau print parts' limit=3 root='40_projects/'
+14:28:38.514 [INFO]   LLM: model=gpt-4.1-2025-04-14 prompt=5501 completion=82 total=5583 cached=2688 cost=$0.011658 cum=$0.011658
+14:28:38.810 [INFO] OUT: rg -n --no-heading -e 'bureau print parts' 40_projects/
+
+14:28:40.906 [INFO] Next step_2... List project folders to visually check for similar project names (2095 ms)
+14:28:40.906 [INFO]   tool='list' path='40_projects/'
+14:28:40.906 [INFO]   LLM: model=gpt-4.1-2025-04-14 prompt=5588 completion=86 total=5674 cached=2688 cost=$0.011864 cum=$0.023522
+14:28:41.216 [INFO] OUT: ls 40_projects/
+14:28:41.216 [INFO] 2026_04_02_hearthline/
+14:28:41.216 [INFO] 2026_04_02_house_mesh/
+14:28:41.216 [INFO] 2026_04_02_northstar_ledger/
+14:28:41.217 [ERROR] 2026_04_24_dockflow_exception_radar/
+14:28:41.217 [INFO] 2026_04_27_studio_parts_library/
+14:28:41.217 [INFO] 2026_04_30_helios_workflow_sprint/
+14:28:41.217 [INFO] 2026_05_02_black_library_evenings/
+14:28:41.217 [INFO] 2026_05_02_harbor_body/
+14:28:41.217 [INFO] 2026_05_02_toy_forge_saturdays/
+14:28:41.217 [INFO] 2026_05_03_reading_spine/
+14:28:41.217 [INFO] 2026_05_03_repair_ledger/
+14:28:41.217 [INFO] 2026_05_03_school_helper_kit/
+14:28:41.217 [INFO] 2026_05_05_family_map_wall/
+14:28:41.217 [INFO] 2026_05_05_window_farm_notes/
+14:28:41.217 [INFO] AGENTS.MD
+14:28:43.839 [INFO] Next step_3... Read README.MD in '2026_04_27_studio_parts_library' for connection to 'bureau print parts' (2622 ms)
+14:28:43.839 [INFO]   tool='read' path='40_projects/2026_04_27_studio_parts_library/README.MD' number=False start_line=0 end_line=0
+14:28:43.839 [INFO]   LLM: model=gpt-4.1-2025-04-14 prompt=5814 completion=132 total=5946 cached=0 cost=$0.012684 cum=$0.036206
+14:28:44.248 [INFO] OUT: cat 40_projects/2026_04_27_studio_parts_library/README.MD
+14:28:44.248 [INFO] # Studio Parts Library
+
+14:28:44.248 [INFO] - alias: `studio_parts_library`
+14:28:44.248 [INFO] - owner_id: `entity.miles`
+14:28:44.248 [INFO] - kind: `maker`
+14:28:44.248 [INFO] - lane: `bureau`
+14:28:44.248 [INFO] - priority: `medium`
+14:28:44.248 [INFO] - visibility: `household`
+14:28:44.248 [INFO] - status: `active`
+14:28:44.248 [INFO] - updated_on: `2026-05-11`
+14:28:44.248 [INFO] - goal: Turn scattered print requests into a reusable library of reliable bureau parts.
+14:28:44.248 [INFO] - next_step: label which parts are one-off hacks versus repeatable designs
+14:28:44.248 [INFO] - linked_entities:
+14:28:44.248 [INFO]   - `entity.petra`
+14:28:44.248 [INFO]   - `entity.hanna`
+14:28:44.248 [INFO]   - `entity.gregor`
+14:28:44.248 [INFO]   - `entity.badger`
+
+14:28:44.248 [INFO] The parts catalog is now a real household capability, not just a printer-adjacent aspiration.
+14:28:46.808 [INFO] Next step_4... Return the project start date as 2026-04-27 (2559 ms)
+14:28:46.808 [INFO]   tool='report_completion' completed_steps_laconic=["Checked project folders and README names for 'bureau print parts' reference", 'Verified 2026_04_27_studio_parts_library README context matches'] message='2026-04-27' grounding_refs=['40_projects/2026_04_27_studio_parts_library/README.MD'] outcome='OUTCOME_OK'
+14:28:46.808 [INFO]   LLM: model=gpt-4.1-2025-04-14 prompt=6084 completion=144 total=6228 cached=5376 cost=$0.013320 cum=$0.049526
+14:28:47.159 [INFO] OUT: {}
+14:28:47.159 [INFO] agent OUTCOME_OK. Summary:
+14:28:47.159 [INFO] - Checked project folders and README names for 'bureau print parts' reference
+14:28:47.159 [INFO] - Verified 2026_04_27_studio_parts_library README context matches
+
+14:28:47.159 [INFO] AGENT SUMMARY: 2026-04-27
+14:28:47.159 [INFO] - 40_projects/2026_04_27_studio_parts_library/README.MD
+
+14:28:55.647 [INFO] Score: 0.00
+
+

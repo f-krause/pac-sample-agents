@@ -1,0 +1,286 @@
+14:29:00.887 [INFO] ============================== Starting task: t059 ==============================
+14:29:00.887 [INFO] 从December 2025开始，我们通过服务项目“operator  workflow discovery sprint”赚了多少钱？只回答一个数字。
+14:29:00.887 [INFO] --------------------------------------------------------------------------------
+14:29:01.291 [INFO] AUTO: tree -L 3 /
+14:29:01.291 [INFO] /
+14:29:01.291 [INFO] ├── 00_inbox
+14:29:01.291 [INFO] │   └── AGENTS.MD
+14:29:01.291 [INFO] ├── 10_entities
+14:29:01.291 [INFO] │   ├── AGENTS.MD
+14:29:01.291 [INFO] │   └── cast
+14:29:01.291 [INFO] │       ├── AGENTS.MD
+14:29:01.291 [INFO] │       ├── badger.md
+14:29:01.291 [INFO] │       ├── bix.md
+14:29:01.291 [INFO] │       ├── claudia.md
+14:29:01.291 [INFO] │       ├── elena.md
+14:29:01.291 [INFO] │       ├── foundry.md
+14:29:01.291 [INFO] │       ├── gregor.md
+14:29:01.291 [INFO] │       ├── hanna.md
+14:29:01.291 [INFO] │       ├── ida.md
+14:29:01.291 [INFO] │       ├── jana.md
+14:29:01.291 [INFO] │       ├── juniper.md
+14:29:01.291 [INFO] │       ├── lukas.md
+14:29:01.291 [INFO] │       ├── miles.md
+14:29:01.291 [INFO] │       ├── nina.md
+14:29:01.291 [INFO] │       ├── nora.md
+14:29:01.291 [INFO] │       ├── omar.md
+14:29:01.291 [INFO] │       ├── oskar.md
+14:29:01.291 [INFO] │       ├── pepper.md
+14:29:01.291 [INFO] │       ├── petra.md
+14:29:01.291 [INFO] │       ├── renate.md
+14:29:01.291 [INFO] │       ├── roman.md
+14:29:01.291 [INFO] │       ├── sara.md
+14:29:01.291 [INFO] │       └── tobias.md
+14:29:01.291 [INFO] ├── 20_work
+14:29:01.291 [INFO] │   ├── AGENTS.MD
+14:29:01.291 [INFO] │   ├── reminders
+14:29:01.291 [INFO] │   │   └── AGENTS.MD
+14:29:01.291 [INFO] │   └── tasks
+14:29:01.291 [INFO] │       └── AGENTS.MD
+14:29:01.291 [INFO] ├── 30_knowledge
+14:29:01.291 [INFO] │   ├── AGENTS.MD
+14:29:01.291 [INFO] │   ├── capture
+14:29:01.291 [INFO] │   │   ├── agent-control-planes-and-runtime-shape.md
+14:29:01.291 [INFO] │   │   ├── agent-skills-for-onboarding.md
+14:29:01.291 [INFO] │   │   ├── AGENTS.MD
+14:29:01.291 [INFO] │   │   ├── assistant-virtual-filesystem.md
+14:29:01.291 [INFO] │   │   ├── delightful-frontends-with-gpt.md
+14:29:01.291 [INFO] │   │   ├── integration-agents-need-guardrails.md
+14:29:01.291 [INFO] │   │   ├── knowledge-agents-with-filesystems.md
+14:29:01.291 [INFO] │   │   ├── managed-agents-at-production-scale.md
+14:29:01.291 [INFO] │   │   ├── mcp-market-gap-is-trust.md
+14:29:01.292 [INFO] │   │   ├── nemoclaw-overview.md
+14:29:01.292 [INFO] │   │   ├── persistent-llm-wiki.md
+14:29:01.292 [INFO] │   │   └── project-glasswing.md
+14:29:01.292 [INFO] │   ├── notes
+14:29:01.292 [INFO] │   │   ├── AGENTS.MD
+14:29:01.292 [INFO] │   │   ├── design-constraints-for-a-household-assistant.md
+14:29:01.292 [INFO] │   │   ├── parking-lot.md
+14:29:01.292 [INFO] │   │   ├── what-i-want-help-with-and-what-stays-mine.md
+14:29:01.292 [INFO] │   │   └── why-i-keep-coming-back-to-a-personal-assistant.md
+14:29:01.292 [INFO] │   └── threads
+14:29:01.292 [INFO] │       └── AGENTS.MD
+14:29:01.292 [INFO] ├── 40_projects
+14:29:01.292 [INFO] │   ├── 2026_04_02_hearthline
+14:29:01.292 [INFO] │   │   └── README.MD
+14:29:01.292 [INFO] │   ├── 2026_04_02_house_mesh
+14:29:01.292 [INFO] │   │   └── README.MD
+14:29:01.292 [INFO] │   ├── 2026_04_02_northstar_ledger
+14:29:01.292 [INFO] │   │   └── README.MD
+14:29:01.292 [ERROR] │   ├── 2026_04_24_dockflow_exception_radar
+14:29:01.292 [INFO] │   │   └── README.MD
+14:29:01.292 [INFO] │   ├── 2026_04_27_studio_parts_library
+14:29:01.292 [INFO] │   │   └── README.MD
+14:29:01.292 [INFO] │   ├── 2026_04_30_helios_workflow_sprint
+14:29:01.292 [INFO] │   │   └── README.MD
+14:29:01.292 [INFO] │   ├── 2026_05_02_black_library_evenings
+14:29:01.292 [INFO] │   │   └── README.MD
+14:29:01.292 [INFO] │   ├── 2026_05_02_harbor_body
+14:29:01.292 [INFO] │   │   └── README.MD
+14:29:01.292 [INFO] │   ├── 2026_05_02_toy_forge_saturdays
+14:29:01.292 [INFO] │   │   └── README.MD
+14:29:01.292 [INFO] │   ├── 2026_05_03_reading_spine
+14:29:01.292 [INFO] │   │   └── README.MD
+14:29:01.292 [INFO] │   ├── 2026_05_03_repair_ledger
+14:29:01.292 [INFO] │   │   └── README.MD
+14:29:01.292 [INFO] │   ├── 2026_05_03_school_helper_kit
+14:29:01.292 [INFO] │   │   └── README.MD
+14:29:01.292 [INFO] │   ├── 2026_05_05_family_map_wall
+14:29:01.292 [INFO] │   │   └── README.MD
+14:29:01.292 [INFO] │   ├── 2026_05_05_window_farm_notes
+14:29:01.292 [INFO] │   │   └── README.MD
+14:29:01.292 [INFO] │   └── AGENTS.MD
+14:29:01.292 [INFO] ├── 50_finance
+14:29:01.292 [INFO] │   ├── AGENTS.MD
+14:29:01.292 [INFO] │   ├── invoices
+14:29:01.292 [INFO] │   │   ├── 2025_11_04__eur_000610__inv_0001__northstar_backfill_alpha.md
+14:29:01.292 [INFO] │   │   ├── 2025_12_02__eur_000770__inv_0002__northstar_backfill_beta.md
+14:29:01.292 [INFO] │   │   ├── 2025_12_18__eur_000520__inv_0006__helios_backfill_intake_audit.md
+14:29:01.292 [INFO] │   │   ├── 2025_12_30__eur_000530__inv_0003__northstar_backfill_gamma.md
+14:29:01.292 [INFO] │   │   ├── 2026_01_19__eur_000760__inv_0007__helios_backfill_process_pack.md
+14:29:01.292 [INFO] │   │   ├── 2026_02_14__eur_000890__inv_0004__northstar_design_partner_sprint.md
+14:29:01.292 [INFO] │   │   ├── 2026_02_17__eur_000610__inv_0008__helios_backfill_rollout_week.md
+14:29:01.292 [INFO] │   │   ├── 2026_03_20__eur_000600__inv_0009__helios_discovery_invoice.md
+14:29:01.292 [INFO] │   │   ├── 2026_03_26__eur_000420__inv_0005__northstar_followup_pack.md
+14:29:01.293 [INFO] │   │   ├── 2026_04_21__eur_000780__inv_0010__helios_checklist_pack_invoice.md
+14:29:01.293 [INFO] │   │   ├── 2026_04_27__eur_000550__inv_0011__helios_followup_support_invoice.md
+14:29:01.293 [INFO] │   │   └── AGENTS.MD
+14:29:01.293 [INFO] │   └── purchases
+14:29:01.293 [INFO] │       ├── 2025_12_05__eur_000044__bill__house_mesh_esp32_order.md
+14:29:01.293 [INFO] │       ├── 2025_12_11__eur_000072__bill__toy_forge_pla_bundle.md
+14:29:01.293 [INFO] │       ├── 2025_12_27__eur_000066__bill__hearthline_epaper_panel.md
+14:29:01.293 [INFO] │       ├── 2026_01_03__eur_000032__bill__repair_ledger_faucet_parts.md
+14:29:01.293 [INFO] │       ├── 2026_01_19__eur_000030__bill__northstar_domain_and_mail.md
+14:29:01.293 [INFO] │       ├── 2026_01_31__eur_000050__bill__hearthline_sensor_bundle.md
+14:29:01.293 [INFO] │       ├── 2026_02_02__eur_000080__bill__studio_parts_petg_batch.md
+14:29:01.293 [INFO] │       ├── 2026_02_14__eur_000105__bill__house_mesh_juniper_ssd.md
+14:29:01.293 [INFO] │       ├── 2026_03_02__eur_000036__bill__family_map_wall_board.md
+14:29:01.293 [INFO] │       ├── 2026_03_05__eur_000033__bill__studio_parts_nozzle_and_inserts.md
+14:29:01.293 [INFO] │       ├── 2026_03_07__eur_000022__bill__house_mesh_esp32_topup.md
+14:29:01.293 [INFO] │       ├── 2026_03_24__eur_000022__bill__toy_forge_wheel_and_magnet_pack.md
+14:29:01.293 [INFO] │       ├── 2026_03_31__eur_000025__bill__school_helper_label_tape.md
+14:29:01.293 [INFO] │       ├── 2026_04_01__eur_000089__bill__black_library_terrain_spool.md
+14:29:01.293 [INFO] │       ├── 2026_04_09__eur_000029__bill__repair_ledger_filter_order.md
+14:29:01.293 [INFO] │       ├── 2026_04_11__eur_000020__bill__studio_parts_magnet_and_felt.md
+14:29:01.293 [INFO] │       ├── 2026_04_14__eur_000027__bill__window_farm_starter_tray.md
+14:29:01.293 [INFO] │       └── AGENTS.MD
+14:29:01.293 [INFO] ├── 60_outbox
+14:29:01.293 [INFO] │   ├── AGENTS.MD
+14:29:01.293 [INFO] │   ├── channels
+14:29:01.293 [INFO] │   │   ├── AGENTS.MD
+14:29:01.293 [INFO] │   │   ├── dockflow_ops_slack.md
+14:29:01.293 [INFO] │   │   ├── grimdark_discord.md
+14:29:01.293 [INFO] │   │   ├── health_signal.md
+14:29:01.293 [INFO] │   │   ├── helios_client_email.md
+14:29:01.293 [INFO] │   │   ├── household_calendar.md
+14:29:01.293 [INFO] │   │   ├── household_signal.md
+14:29:01.293 [INFO] │   │   ├── northstar_email.md
+14:29:01.293 [INFO] │   │   ├── studio_signal.md
+14:29:01.293 [INFO] │   │   └── work_calendar.md
+14:29:01.293 [INFO] │   ├── drafts
+14:29:01.293 [INFO] │   │   └── AGENTS.MD
+14:29:01.293 [INFO] │   └── outbox
+14:29:01.293 [INFO] │       └── AGENTS.MD
+14:29:01.293 [INFO] ├── 90_memory
+14:29:01.293 [INFO] │   └── AGENTS.MD
+14:29:01.293 [INFO] ├── 99_system
+14:29:01.293 [INFO] │   ├── AGENTS.MD
+14:29:01.293 [INFO] │   ├── schemas
+14:29:01.293 [INFO] │   │   ├── AGENTS.MD
+14:29:01.293 [INFO] │   │   ├── bulk-processing-and-queueing-frontmatter.md
+14:29:01.293 [INFO] │   │   └── finance-record-frontmatter.md
+14:29:01.293 [INFO] │   └── workflows
+14:29:01.293 [INFO] │       ├── AGENTS.MD
+14:29:01.293 [INFO] │       ├── deletion-and-wiping.md
+14:29:01.293 [INFO] │       ├── inbox-processing-v2-update.md
+14:29:01.293 [INFO] │       ├── migrate-records-to-frontmatter.md
+14:29:01.293 [INFO] │       ├── migrating-to-nora-mcp.md
+14:29:01.293 [INFO] │       ├── ocr-records.md
+14:29:01.293 [INFO] │       ├── process-next-inbox-item.md
+14:29:01.293 [INFO] │       ├── processing-inbox-email.md
+14:29:01.293 [INFO] │       └── sending-email.md
+14:29:01.293 [INFO] └── AGENTS.MD
+14:29:01.528 [INFO] AUTO: cat AGENTS.md
+14:29:01.528 [INFO] Be pragmatic. This is one Obsidian-style personal workspace for Miles's household, work, startup, and project life.
+
+14:29:01.528 [INFO] Key locations:
+
+14:29:01.528 [INFO] - `00_inbox/`: unprocessed drops and requests
+14:29:01.528 [INFO] - `10_entities/cast/`: canonical people, pets, and named systems
+14:29:01.528 [INFO] - `20_work/`: reminders and active tasks
+14:29:01.528 [INFO] - `30_knowledge/`: capture, notes, and threads
+14:29:01.528 [INFO] - `40_projects/`: concrete project folders and artifacts; folder names start with the project creation date as `YYYY_MM_DD_`, and the canonical project record is `README.MD` inside each folder
+14:29:01.528 [INFO] - `50_finance/`: invoices and purchases
+14:29:01.528 [INFO] - `60_outbox/`: channel trust docs, drafts, and outbound state
+14:29:01.528 [INFO] - `90_memory/`: assistant memory and story/history surfaces
+14:29:01.528 [INFO] - `99_system/`: workflows and schemas
+
+14:29:01.528 [INFO] Rules:
+
+14:29:01.529 [INFO] - Read nested `AGENTS.MD` files when you enter a folder.
+14:29:01.529 [INFO] - Before starting task work, inspect `99_system/` with `tree` and then read the relevant workflow or schema docs there.
+14:29:01.529 [INFO] - Records are gradually migrating toward YAML frontmatter so they stay easy to browse in Obsidian while carrying structured fields for automation.
+14:29:01.529 [INFO] - The migration period can be a little messy in the short term because older notes and newer structured notes may coexist, but the long-term goal is to streamline the workspace and clean up record handling.
+14:29:01.529 [INFO] - If a task asks you to add or repair structured metadata on an existing note, first look in `99_system/workflows/` for the current migration guidance, then discover the matching shape doc under `99_system/schemas/`.
+14:29:01.529 [INFO] - Entity files in `10_entities/cast/` are authoritative for identity, `primary_contact_email` when present, and birthdays when present.
+14:29:01.529 [INFO] - If the relevant canonical file does not show the needed fact, ask for clarification instead of guessing.
+14:29:01.529 [INFO] - Keep changes focused and preserve lane boundaries across household, day job, client, startup, and hobby contexts.
+
+14:29:01.792 [INFO] AUTO: {
+14:29:01.792 [INFO]   "unixTime": "1774974720",
+14:29:01.792 [INFO]   "time": "2026-03-31T16:32:00Z"
+14:29:01.792 [INFO] }
+14:29:02.086 [INFO] AUTO-DOC: cat 99_system/workflows/AGENTS.MD
+14:29:02.086 [INFO] `99_system/workflows/` describes how work should move through the vault.
+
+14:29:02.086 [INFO] - Before starting task work, inspect all files under `99_system/` with `tree` so you know wh...
+14:29:02.371 [INFO] AUTO-DOC: cat 50_finance/AGENTS.MD
+14:29:02.371 [INFO] `50_finance/` is the money lane.
+
+14:29:02.371 [INFO] - Treat invoices, purchases, and payment-adjacent records as sensitive and auditable.
+14:29:02.371 [INFO] - Prefer exactness over prose here.
+14:29:02.371 [INFO] - Some records in t...
+14:29:02.731 [INFO] AUTO-DOC: cat 50_finance/purchases/AGENTS.MD
+14:29:02.731 [INFO] `50_finance/purchases/` holds purchase and spend records.
+
+14:29:02.731 [INFO] - Preserve the distinction between household, business, and speculative spend.
+14:29:02.731 [INFO] - Keep changes reviewable a...
+14:29:03.045 [INFO] AUTO-DOC: cat 50_finance/invoices/AGENTS.MD
+14:29:03.045 [INFO] `50_finance/invoices/` holds durable invoice records.
+
+14:29:03.045 [INFO] - Invoice identity, recipient, and date-sensitive details must stay exact.
+14:29:03.045 [INFO] - When in doubt about destination or...
+14:29:05.801 [INFO] Next step_1... Search invoice files for 'operator workflow discovery sprint' (2755 ms)
+14:29:05.801 [INFO]   tool='search' pattern='operator workflow discovery sprint' limit=10 root='50_finance/invoices/'
+14:29:05.801 [INFO]   LLM: model=gpt-4.1-2025-04-14 prompt=5657 completion=113 total=5770 cached=1024 cost=$0.012218 cum=$0.012218
+14:29:06.186 [INFO] OUT: rg -n --no-heading -e 'operator workflow discovery sprint' 50_finance/invoices/
+14:29:06.186 [INFO] 50_finance/invoices/2025_11_04__eur_000610__inv_0001__northstar_backfill_alpha.md:24:| 1 | operator workflow discovery sprint  | 2   | 185      | 370      |
+14:29:06.186 [INFO] 50_finance/invoices/2025_12_02__eur_000770__inv_0002__northstar_backfill_beta.md:24:| 1 | operator workflow discovery sprint  | 1   | 185      | 185      |
+14:29:06.186 [INFO] 50_finance/invoices/2025_12_30__eur_000530__inv_0003__northstar_backfill_gamma.md:24:| 1 | operator workflow discovery sprint  | 1   | 185      | 185      |
+14:29:06.186 [INFO] 50_finance/invoices/2026_02_14__eur_000890__inv_0004__northstar_design_partner_sprint.md:24:| 1 | operator workflow discovery sprint  | 1   | 650      | 650      |
+14:29:08.699 [INFO] Next step_2... Read invoice 2025_12_02 and extract relevant amount (2512 ms)
+14:29:08.699 [INFO]   tool='read' path='50_finance/invoices/2025_12_02__eur_000770__inv_0002__northstar_backfill_beta.md' number=False start_line=20 end_line=30
+14:29:08.699 [INFO]   LLM: model=gpt-4.1-2025-04-14 prompt=5967 completion=139 total=6106 cached=5504 cost=$0.013046 cum=$0.025264
+14:29:09.165 [INFO] OUT: sed -n '20,30p' 50_finance/invoices/2025_12_02__eur_000770__inv_0002__northstar_backfill_beta.md
+14:29:09.165 [INFO] ```text
+14:29:09.165 [INFO] +---+-------------------------------------+-----+----------+----------+
+14:29:09.165 [INFO] | # | item                                | qty | unit_eur | line_eur |
+14:29:09.165 [INFO] +---+-------------------------------------+-----+----------+----------+
+14:29:09.165 [INFO] | 1 | operator workflow discovery sprint  | 1   | 185      | 185      |
+14:29:09.165 [INFO] | 2 | follow-up timeline prototype review | 2   | 240      | 480      |
+14:29:09.165 [INFO] | 3 | buyer-language refinement memo      | 1   | 105      | 105      |
+14:29:09.165 [INFO] +---+-------------------------------------+-----+----------+----------+
+14:29:09.165 [INFO] |   | TOTAL                               |     |          | 770      |
+14:29:09.165 [INFO] +---+-------------------------------------+-----+----------+----------+
+14:29:09.165 [INFO] ```
+
+14:29:11.952 [INFO] Next step_3... Check 2025_12_30 invoice for operator workflow discovery sprint line/amount (2786 ms)
+14:29:11.952 [INFO]   tool='read' path='50_finance/invoices/2025_12_30__eur_000530__inv_0003__northstar_backfill_gamma.md' number=False start_line=20 end_line=30
+14:29:11.952 [INFO]   LLM: model=gpt-4.1-2025-04-14 prompt=6257 completion=144 total=6401 cached=5504 cost=$0.013666 cum=$0.038930
+14:29:12.291 [INFO] OUT: sed -n '20,30p' 50_finance/invoices/2025_12_30__eur_000530__inv_0003__northstar_backfill_gamma.md
+14:29:12.291 [INFO] ```text
+14:29:12.291 [INFO] +---+-------------------------------------+-----+----------+----------+
+14:29:12.291 [INFO] | # | item                                | qty | unit_eur | line_eur |
+14:29:12.291 [INFO] +---+-------------------------------------+-----+----------+----------+
+14:29:12.291 [INFO] | 1 | operator workflow discovery sprint  | 1   | 185      | 185      |
+14:29:12.291 [INFO] | 2 | follow-up timeline prototype review | 1   | 240      | 240      |
+14:29:12.291 [INFO] | 3 | buyer-language refinement memo      | 1   | 105      | 105      |
+14:29:12.291 [INFO] +---+-------------------------------------+-----+----------+----------+
+14:29:12.291 [INFO] |   | TOTAL                               |     |          | 530      |
+14:29:12.291 [INFO] +---+-------------------------------------+-----+----------+----------+
+14:29:12.291 [INFO] ```
+
+14:29:14.995 [INFO] Next step_4... Read the relevant lines of 2026_02_14 invoice to extract the value for 'operator workflow discovery sprint'. (2703 ms)
+14:29:14.995 [INFO]   tool='read' path='50_finance/invoices/2026_02_14__eur_000890__inv_0004__northstar_design_partner_sprint.md' number=False start_line=20 end_line=30
+14:29:14.995 [INFO]   LLM: model=gpt-4.1-2025-04-14 prompt=6551 completion=135 total=6686 cached=1024 cost=$0.014182 cum=$0.053112
+14:29:15.365 [INFO] OUT: sed -n '20,30p' 50_finance/invoices/2026_02_14__eur_000890__inv_0004__northstar_design_partner_sprint.md
+14:29:15.365 [INFO] ```text
+14:29:15.365 [INFO] +---+-------------------------------------+-----+----------+----------+
+14:29:15.365 [INFO] | # | item                                | qty | unit_eur | line_eur |
+14:29:15.365 [INFO] +---+-------------------------------------+-----+----------+----------+
+14:29:15.365 [INFO] | 1 | operator workflow discovery sprint  | 1   | 650      | 650      |
+14:29:15.365 [INFO] | 2 | follow-up timeline prototype review | 1   | 240      | 240      |
+14:29:15.365 [INFO] +---+-------------------------------------+-----+----------+----------+
+14:29:15.365 [INFO] |   | TOTAL                               |     |          | 890      |
+14:29:15.365 [INFO] +---+-------------------------------------+-----+----------+----------+
+14:29:15.365 [INFO] ```
+
+
+14:29:19.828 [INFO] Next step_5... Sum the three amounts for final total (4463 ms)
+14:29:19.828 [INFO]   tool='report_completion' completed_steps_laconic=['Searched for relevant invoices', 'Checked actual line item amounts in each invoice since Dec 2025', 'Identified 185 (Dec 2 2025), 185 (Dec 30 2025), and 650 (Feb 14 2026)', 'Ready to sum values'] message='1020' grounding_refs=['50_finance/invoices/2025_12_02__eur_000770__inv_0002__northstar_backfill_beta.md', '50_finance/invoices/2025_12_30__eur_000530__inv_0003__northstar_backfill_gamma.md', '50_finance/invoices/2026_02_14__eur_000890__inv_0004__northstar_design_partner_sprint.md'] outcome='OUTCOME_OK'
+14:29:19.828 [INFO]   LLM: model=gpt-4.1-2025-04-14 prompt=6832 completion=257 total=7089 cached=6016 cost=$0.015720 cum=$0.068832
+14:29:20.082 [INFO] OUT: {}
+14:29:20.082 [INFO] agent OUTCOME_OK. Summary:
+14:29:20.082 [INFO] - Searched for relevant invoices
+14:29:20.082 [INFO] - Checked actual line item amounts in each invoice since Dec 2025
+14:29:20.082 [INFO] - Identified 185 (Dec 2 2025), 185 (Dec 30 2025), and 650 (Feb 14 2026)
+14:29:20.082 [INFO] - Ready to sum values
+
+14:29:20.082 [INFO] AGENT SUMMARY: 1020
+14:29:20.082 [INFO] - 50_finance/invoices/2025_12_02__eur_000770__inv_0002__northstar_backfill_beta.md
+14:29:20.082 [INFO] - 50_finance/invoices/2025_12_30__eur_000530__inv_0003__northstar_backfill_gamma.md
+14:29:20.082 [INFO] - 50_finance/invoices/2026_02_14__eur_000890__inv_0004__northstar_design_partner_sprint.md
+
+14:29:26.770 [INFO] Score: 0.00
+
+

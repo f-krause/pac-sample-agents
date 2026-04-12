@@ -1,0 +1,308 @@
+14:32:32.233 [INFO] ============================== Starting task: t103 ==============================
+14:32:32.233 [INFO] Looking at the bill 50_finance/purchases/2025_11_12__eur_000072__bill__toy_forge_pla_bundle.md. How much did I pay to these guys in total? Number only
+14:32:32.233 [INFO] --------------------------------------------------------------------------------
+14:32:32.894 [INFO] AUTO: tree -L 3 /
+14:32:32.894 [INFO] /
+14:32:32.894 [INFO] ├── 00_inbox
+14:32:32.894 [INFO] │   └── AGENTS.MD
+14:32:32.894 [INFO] ├── 10_entities
+14:32:32.894 [INFO] │   ├── AGENTS.MD
+14:32:32.894 [INFO] │   └── cast
+14:32:32.895 [INFO] │       ├── AGENTS.MD
+14:32:32.895 [INFO] │       ├── badger.md
+14:32:32.895 [INFO] │       ├── bix.md
+14:32:32.895 [INFO] │       ├── claudia.md
+14:32:32.895 [INFO] │       ├── elena.md
+14:32:32.895 [INFO] │       ├── foundry.md
+14:32:32.895 [INFO] │       ├── gregor.md
+14:32:32.895 [INFO] │       ├── hanna.md
+14:32:32.895 [INFO] │       ├── ida.md
+14:32:32.895 [INFO] │       ├── jana.md
+14:32:32.895 [INFO] │       ├── juniper.md
+14:32:32.895 [INFO] │       ├── lukas.md
+14:32:32.895 [INFO] │       ├── miles.md
+14:32:32.895 [INFO] │       ├── nina.md
+14:32:32.895 [INFO] │       ├── nora.md
+14:32:32.895 [INFO] │       ├── omar.md
+14:32:32.895 [INFO] │       ├── oskar.md
+14:32:32.895 [INFO] │       ├── pepper.md
+14:32:32.895 [INFO] │       ├── petra.md
+14:32:32.895 [INFO] │       ├── renate.md
+14:32:32.895 [INFO] │       ├── roman.md
+14:32:32.895 [INFO] │       ├── sara.md
+14:32:32.895 [INFO] │       └── tobias.md
+14:32:32.895 [INFO] ├── 20_work
+14:32:32.895 [INFO] │   ├── AGENTS.MD
+14:32:32.895 [INFO] │   ├── reminders
+14:32:32.895 [INFO] │   │   └── AGENTS.MD
+14:32:32.895 [INFO] │   └── tasks
+14:32:32.895 [INFO] │       └── AGENTS.MD
+14:32:32.895 [INFO] ├── 30_knowledge
+14:32:32.895 [INFO] │   ├── AGENTS.MD
+14:32:32.895 [INFO] │   ├── capture
+14:32:32.895 [INFO] │   │   ├── agent-control-planes-and-runtime-shape.md
+14:32:32.895 [INFO] │   │   ├── agent-skills-for-onboarding.md
+14:32:32.895 [INFO] │   │   ├── AGENTS.MD
+14:32:32.895 [INFO] │   │   ├── assistant-virtual-filesystem.md
+14:32:32.895 [INFO] │   │   ├── delightful-frontends-with-gpt.md
+14:32:32.895 [INFO] │   │   ├── integration-agents-need-guardrails.md
+14:32:32.895 [INFO] │   │   ├── knowledge-agents-with-filesystems.md
+14:32:32.895 [INFO] │   │   ├── managed-agents-at-production-scale.md
+14:32:32.895 [INFO] │   │   ├── mcp-market-gap-is-trust.md
+14:32:32.895 [INFO] │   │   ├── nemoclaw-overview.md
+14:32:32.895 [INFO] │   │   ├── persistent-llm-wiki.md
+14:32:32.895 [INFO] │   │   └── project-glasswing.md
+14:32:32.895 [INFO] │   ├── notes
+14:32:32.895 [INFO] │   │   ├── AGENTS.MD
+14:32:32.895 [INFO] │   │   ├── design-constraints-for-a-household-assistant.md
+14:32:32.895 [INFO] │   │   ├── parking-lot.md
+14:32:32.895 [INFO] │   │   ├── what-i-want-help-with-and-what-stays-mine.md
+14:32:32.895 [INFO] │   │   └── why-i-keep-coming-back-to-a-personal-assistant.md
+14:32:32.895 [INFO] │   └── threads
+14:32:32.895 [INFO] │       └── AGENTS.MD
+14:32:32.895 [INFO] ├── 40_projects
+14:32:32.895 [INFO] │   ├── 2026_03_04_hearthline
+14:32:32.895 [INFO] │   │   └── README.MD
+14:32:32.895 [INFO] │   ├── 2026_03_04_house_mesh
+14:32:32.895 [INFO] │   │   └── README.MD
+14:32:32.895 [INFO] │   ├── 2026_03_04_northstar_ledger
+14:32:32.895 [INFO] │   │   └── README.MD
+14:32:32.895 [ERROR] │   ├── 2026_03_25_dockflow_exception_radar
+14:32:32.895 [INFO] │   │   └── README.MD
+14:32:32.895 [INFO] │   ├── 2026_03_29_studio_parts_library
+14:32:32.896 [INFO] │   │   └── README.MD
+14:32:32.896 [INFO] │   ├── 2026_04_01_helios_workflow_sprint
+14:32:32.896 [INFO] │   │   └── README.MD
+14:32:32.896 [INFO] │   ├── 2026_04_03_black_library_evenings
+14:32:32.896 [INFO] │   │   └── README.MD
+14:32:32.896 [INFO] │   ├── 2026_04_03_harbor_body
+14:32:32.896 [INFO] │   │   └── README.MD
+14:32:32.896 [INFO] │   ├── 2026_04_03_toy_forge_saturdays
+14:32:32.896 [INFO] │   │   └── README.MD
+14:32:32.896 [INFO] │   ├── 2026_04_04_reading_spine
+14:32:32.896 [INFO] │   │   └── README.MD
+14:32:32.896 [INFO] │   ├── 2026_04_04_repair_ledger
+14:32:32.896 [INFO] │   │   └── README.MD
+14:32:32.896 [INFO] │   ├── 2026_04_04_school_helper_kit
+14:32:32.896 [INFO] │   │   └── README.MD
+14:32:32.896 [INFO] │   ├── 2026_04_06_family_map_wall
+14:32:32.896 [INFO] │   │   └── README.MD
+14:32:32.896 [INFO] │   ├── 2026_04_06_window_farm_notes
+14:32:32.896 [INFO] │   │   └── README.MD
+14:32:32.896 [INFO] │   └── AGENTS.MD
+14:32:32.896 [INFO] ├── 50_finance
+14:32:32.896 [INFO] │   ├── AGENTS.MD
+14:32:32.896 [INFO] │   ├── invoices
+14:32:32.896 [INFO] │   │   ├── 2025_10_06__eur_000610__inv_0001__northstar_backfill_alpha.md
+14:32:32.896 [INFO] │   │   ├── 2025_11_03__eur_000770__inv_0002__northstar_backfill_beta.md
+14:32:32.896 [INFO] │   │   ├── 2025_11_19__eur_000520__inv_0006__helios_backfill_intake_audit.md
+14:32:32.896 [INFO] │   │   ├── 2025_12_01__eur_000530__inv_0003__northstar_backfill_gamma.md
+14:32:32.896 [INFO] │   │   ├── 2025_12_21__eur_000760__inv_0007__helios_backfill_process_pack.md
+14:32:32.896 [INFO] │   │   ├── 2026_01_17__eur_000890__inv_0004__northstar_design_partner_sprint.md
+14:32:32.896 [INFO] │   │   ├── 2026_01_19__eur_000610__inv_0008__helios_backfill_rollout_week.md
+14:32:32.896 [INFO] │   │   ├── 2026_02_19__eur_000600__inv_0009__helios_discovery_invoice.md
+14:32:32.896 [INFO] │   │   ├── 2026_02_26__eur_000420__inv_0005__northstar_followup_pack.md
+14:32:32.896 [INFO] │   │   ├── 2026_03_23__eur_000780__inv_0010__helios_checklist_pack_invoice.md
+14:32:32.896 [INFO] │   │   ├── 2026_03_29__eur_000550__inv_0011__helios_followup_support_invoice.md
+14:32:32.896 [INFO] │   │   └── AGENTS.MD
+14:32:32.896 [INFO] │   └── purchases
+14:32:32.896 [INFO] │       ├── 2025_11_06__eur_000044__bill__house_mesh_esp32_order.md
+14:32:32.896 [INFO] │       ├── 2025_11_12__eur_000072__bill__toy_forge_pla_bundle.md
+14:32:32.896 [INFO] │       ├── 2025_11_28__eur_000066__bill__hearthline_epaper_panel.md
+14:32:32.896 [INFO] │       ├── 2025_12_05__eur_000032__bill__repair_ledger_faucet_parts.md
+14:32:32.896 [INFO] │       ├── 2025_12_21__eur_000030__bill__northstar_domain_and_mail.md
+14:32:32.896 [INFO] │       ├── 2026_01_02__eur_000050__bill__hearthline_sensor_bundle.md
+14:32:32.896 [INFO] │       ├── 2026_01_04__eur_000080__bill__studio_parts_petg_batch.md
+14:32:32.896 [INFO] │       ├── 2026_01_16__eur_000105__bill__house_mesh_juniper_ssd.md
+14:32:32.896 [INFO] │       ├── 2026_02_01__eur_000036__bill__family_map_wall_board.md
+14:32:32.896 [INFO] │       ├── 2026_02_04__eur_000033__bill__studio_parts_nozzle_and_inserts.md
+14:32:32.896 [INFO] │       ├── 2026_02_06__eur_000022__bill__house_mesh_esp32_topup.md
+14:32:32.896 [INFO] │       ├── 2026_02_23__eur_000022__bill__toy_forge_wheel_and_magnet_pack.md
+14:32:32.896 [INFO] │       ├── 2026_03_02__eur_000025__bill__school_helper_label_tape.md
+14:32:32.896 [INFO] │       ├── 2026_03_03__eur_000089__bill__black_library_terrain_spool.md
+14:32:32.896 [INFO] │       ├── 2026_03_11__eur_000029__bill__repair_ledger_filter_order.md
+14:32:32.896 [INFO] │       ├── 2026_03_13__eur_000020__bill__studio_parts_magnet_and_felt.md
+14:32:32.896 [INFO] │       ├── 2026_03_16__eur_000027__bill__window_farm_starter_tray.md
+14:32:32.896 [INFO] │       └── AGENTS.MD
+14:32:32.896 [INFO] ├── 60_outbox
+14:32:32.896 [INFO] │   ├── AGENTS.MD
+14:32:32.896 [INFO] │   ├── channels
+14:32:32.896 [INFO] │   │   ├── AGENTS.MD
+14:32:32.896 [INFO] │   │   ├── dockflow_ops_slack.md
+14:32:32.896 [INFO] │   │   ├── grimdark_discord.md
+14:32:32.896 [INFO] │   │   ├── health_signal.md
+14:32:32.896 [INFO] │   │   ├── helios_client_email.md
+14:32:32.896 [INFO] │   │   ├── household_calendar.md
+14:32:32.896 [INFO] │   │   ├── household_signal.md
+14:32:32.896 [INFO] │   │   ├── northstar_email.md
+14:32:32.896 [INFO] │   │   ├── studio_signal.md
+14:32:32.896 [INFO] │   │   └── work_calendar.md
+14:32:32.896 [INFO] │   ├── drafts
+14:32:32.896 [INFO] │   │   └── AGENTS.MD
+14:32:32.896 [INFO] │   └── outbox
+14:32:32.896 [INFO] │       └── AGENTS.MD
+14:32:32.896 [INFO] ├── 90_memory
+14:32:32.896 [INFO] │   └── AGENTS.MD
+14:32:32.896 [INFO] ├── 99_system
+14:32:32.896 [INFO] │   ├── AGENTS.MD
+14:32:32.896 [INFO] │   ├── schemas
+14:32:32.896 [INFO] │   │   ├── AGENTS.MD
+14:32:32.896 [INFO] │   │   ├── bulk-processing-and-queueing-frontmatter.md
+14:32:32.896 [INFO] │   │   └── finance-record-frontmatter.md
+14:32:32.896 [INFO] │   └── workflows
+14:32:32.896 [INFO] │       ├── AGENTS.MD
+14:32:32.896 [INFO] │       ├── deletion-and-wiping.md
+14:32:32.896 [INFO] │       ├── inbox-processing-v2-update.md
+14:32:32.896 [INFO] │       ├── migrate-records-to-frontmatter.md
+14:32:32.896 [INFO] │       ├── migrating-to-nora-mcp.md
+14:32:32.896 [INFO] │       ├── ocr-records.md
+14:32:32.897 [INFO] │       ├── process-next-inbox-item.md
+14:32:32.897 [INFO] │       ├── processing-inbox-email.md
+14:32:32.897 [INFO] │       └── sending-email.md
+14:32:32.897 [INFO] └── AGENTS.MD
+14:32:33.455 [INFO] AUTO: cat AGENTS.md
+14:32:33.455 [INFO] Be pragmatic. This is one Obsidian-style personal workspace for Miles's household, work, startup, and project life.
+
+14:32:33.455 [INFO] Key locations:
+
+14:32:33.455 [INFO] - `00_inbox/`: unprocessed drops and requests
+14:32:33.455 [INFO] - `10_entities/cast/`: canonical people, pets, and named systems
+14:32:33.455 [INFO] - `20_work/`: reminders and active tasks
+14:32:33.455 [INFO] - `30_knowledge/`: capture, notes, and threads
+14:32:33.455 [INFO] - `40_projects/`: concrete project folders and artifacts; folder names start with the project creation date as `YYYY_MM_DD_`, and the canonical project record is `README.MD` inside each folder
+14:32:33.455 [INFO] - `50_finance/`: invoices and purchases
+14:32:33.455 [INFO] - `60_outbox/`: channel trust docs, drafts, and outbound state
+14:32:33.455 [INFO] - `90_memory/`: assistant memory and story/history surfaces
+14:32:33.455 [INFO] - `99_system/`: workflows and schemas
+
+14:32:33.455 [INFO] Rules:
+
+14:32:33.455 [INFO] - Read nested `AGENTS.MD` files when you enter a folder.
+14:32:33.455 [INFO] - Before starting task work, inspect `99_system/` with `tree` and then read the relevant workflow or schema docs there.
+14:32:33.455 [INFO] - Records are gradually migrating toward YAML frontmatter so they stay easy to browse in Obsidian while carrying structured fields for automation.
+14:32:33.455 [INFO] - The migration period can be a little messy in the short term because older notes and newer structured notes may coexist, but the long-term goal is to streamline the workspace and clean up record handling.
+14:32:33.455 [INFO] - If a task asks you to add or repair structured metadata on an existing note, first look in `99_system/workflows/` for the current migration guidance, then discover the matching shape doc under `99_system/schemas/`.
+14:32:33.455 [INFO] - Entity files in `10_entities/cast/` are authoritative for identity, `primary_contact_email` when present, and birthdays when present.
+14:32:33.455 [INFO] - If the relevant canonical file does not show the needed fact, ask for clarification instead of guessing.
+14:32:33.455 [INFO] - Keep changes focused and preserve lane boundaries across household, day job, client, startup, and hobby contexts.
+
+14:32:34.057 [INFO] AUTO: {
+14:32:34.057 [INFO]   "unixTime": "1772475660",
+14:32:34.057 [INFO]   "time": "2026-03-02T18:21:00Z"
+14:32:34.057 [INFO] }
+14:32:34.672 [INFO] AUTO-DOC: cat 99_system/workflows/AGENTS.MD
+14:32:34.672 [INFO] `99_system/workflows/` describes how work should move through the vault.
+
+14:32:34.672 [INFO] - Before starting task work, inspect all files under `99_system/` with `tree` so you know wh...
+14:32:35.343 [INFO] AUTO-DOC: cat 50_finance/AGENTS.MD
+14:32:35.343 [INFO] `50_finance/` is the money lane.
+
+14:32:35.343 [INFO] - Treat invoices, purchases, and payment-adjacent records as sensitive and auditable.
+14:32:35.343 [INFO] - Prefer exactness over prose here.
+14:32:35.343 [INFO] - Some records in t...
+14:32:35.791 [INFO] AUTO-DOC: cat 50_finance/purchases/AGENTS.MD
+14:32:35.791 [INFO] `50_finance/purchases/` holds purchase and spend records.
+
+14:32:35.791 [INFO] - Preserve the distinction between household, business, and speculative spend.
+14:32:35.791 [INFO] - Keep changes reviewable a...
+14:32:36.483 [INFO] AUTO-DOC: cat 50_finance/invoices/AGENTS.MD
+14:32:36.483 [INFO] `50_finance/invoices/` holds durable invoice records.
+
+14:32:36.483 [INFO] - Invoice identity, recipient, and date-sensitive details must stay exact.
+14:32:36.483 [INFO] - When in doubt about destination or...
+14:32:38.947 [INFO] Next step_1... search for all purchases referencing 'toy_forge' (2463 ms)
+14:32:38.947 [INFO]   tool='search' pattern='toy_forge' limit=10 root='50_finance/purchases/'
+14:32:38.947 [INFO]   LLM: model=gpt-4.1-2025-04-14 prompt=5677 completion=99 total=5776 cached=1024 cost=$0.012146 cum=$0.012146
+14:32:39.883 [INFO] OUT: rg -n --no-heading -e toy_forge 50_finance/purchases/
+14:32:39.883 [INFO] 50_finance/purchases/2025_11_12__eur_000072__bill__toy_forge_pla_bundle.md:8:| bill_id        | bill.toy_forge_pla_bundle |
+14:32:39.883 [INFO] 50_finance/purchases/2025_11_12__eur_000072__bill__toy_forge_pla_bundle.md:9:| alias          | toy_forge_pla_bundle      |
+14:32:39.883 [INFO] 50_finance/purchases/2026_02_23__eur_000022__bill__toy_forge_wheel_and_magnet_pack.md:8:| bill_id        | bill.toy_forge_wheel_and_magnet_pack |
+14:32:39.883 [INFO] 50_finance/purchases/2026_02_23__eur_000022__bill__toy_forge_wheel_and_magnet_pack.md:9:| alias          | toy_forge_wheel_and_magnet_pack      |
+14:32:43.526 [INFO] Next step_2... Read first bill for amount (2025_11_12__eur_000072__bill__toy_forge_pla_bundle.md) (3643 ms)
+14:32:43.526 [INFO]   tool='read' path='50_finance/purchases/2025_11_12__eur_000072__bill__toy_forge_pla_bundle.md' number=False start_line=0 end_line=0
+14:32:43.526 [INFO]   LLM: model=gpt-4.1-2025-04-14 prompt=5950 completion=198 total=6148 cached=5504 cost=$0.013484 cum=$0.025630
+14:32:44.492 [INFO] OUT: cat 50_finance/purchases/2025_11_12__eur_000072__bill__toy_forge_pla_bundle.md
+14:32:44.492 [INFO] # Family PLA spool bundle
+
+14:32:44.492 [INFO] ```text
+14:32:44.492 [INFO] +----------------+---------------------------+
+14:32:44.492 [INFO] | field          | value                     |
+14:32:44.492 [INFO] +----------------+---------------------------+
+14:32:44.492 [INFO] | record_type    | bill                      |
+14:32:44.492 [INFO] | bill_id        | bill.toy_forge_pla_bundle |
+14:32:44.492 [INFO] | alias          | toy_forge_pla_bundle      |
+14:32:44.492 [INFO] | purchased_on   | 2025-11-12                |
+14:32:44.492 [INFO] | total_eur      | 72                        |
+14:32:44.492 [INFO] | counterparty   | Filamenthütte Wien        |
+14:32:44.492 [INFO] | project        | Toy Forge Saturdays       |
+14:32:44.492 [INFO] | related_entity | Badger                    |
+14:32:44.492 [INFO] +----------------+---------------------------+
+14:32:44.492 [INFO] ```
+
+14:32:44.492 [INFO] ## Line Items
+
+14:32:44.492 [INFO] ```text
+14:32:44.492 [INFO] +---+------------------------+-----+----------+----------+
+14:32:44.492 [INFO] | # | item                   | qty | unit_eur | line_eur |
+14:32:44.492 [INFO] +---+------------------------+-----+----------+----------+
+14:32:44.492 [INFO] | 1 | PLA spool mixed colors | 3   | 24       | 72       |
+14:32:44.492 [INFO] +---+------------------------+-----+----------+----------+
+14:32:44.492 [INFO] |   | TOTAL                  |     |          | 72       |
+14:32:44.492 [INFO] +---+------------------------+-----+----------+----------+
+14:32:44.492 [INFO] ```
+
+14:32:44.492 [INFO] ## Notes
+
+14:32:44.492 [INFO] Older family-printing consumables that only got sorted once Toy Forge became a named lane.
+14:32:47.208 [INFO] Next step_3... Read 2026_02_23 Toy Forge bill for amount (2716 ms)
+14:32:47.208 [INFO]   tool='read' path='50_finance/purchases/2026_02_23__eur_000022__bill__toy_forge_wheel_and_magnet_pack.md' number=False start_line=0 end_line=0
+14:32:47.208 [INFO]   LLM: model=gpt-4.1-2025-04-14 prompt=6346 completion=129 total=6475 cached=0 cost=$0.013724 cum=$0.039354
+14:32:47.894 [INFO] OUT: cat 50_finance/purchases/2026_02_23__eur_000022__bill__toy_forge_wheel_and_magnet_pack.md
+14:32:47.894 [INFO] # Toy hardware bits
+
+14:32:47.894 [INFO] ```text
+14:32:47.894 [INFO] +----------------+--------------------------------------+
+14:32:47.894 [INFO] | field          | value                                |
+14:32:47.894 [INFO] +----------------+--------------------------------------+
+14:32:47.894 [INFO] | record_type    | bill                                 |
+14:32:47.894 [INFO] | bill_id        | bill.toy_forge_wheel_and_magnet_pack |
+14:32:47.894 [INFO] | alias          | toy_forge_wheel_and_magnet_pack      |
+14:32:47.894 [INFO] | purchased_on   | 2026-02-23                           |
+14:32:47.894 [INFO] | total_eur      | 22                                   |
+14:32:47.894 [INFO] | counterparty   | 深圳市星河玩具配件                            |
+14:32:47.894 [INFO] | project        | Toy Forge Saturdays                  |
+14:32:47.894 [INFO] | related_entity | Ida Novak                            |
+14:32:47.894 [INFO] +----------------+--------------------------------------+
+14:32:47.894 [INFO] ```
+
+14:32:47.894 [INFO] ## Line Items
+
+14:32:47.894 [INFO] ```text
+14:32:47.894 [INFO] +---+-----------------+-----+----------+----------+
+14:32:47.894 [INFO] | # | item            | qty | unit_eur | line_eur |
+14:32:47.894 [INFO] +---+-----------------+-----+----------+----------+
+14:32:47.894 [INFO] | 1 | small wheel kit | 1   | 13       | 13       |
+14:32:47.894 [INFO] | 2 | magnet pack     | 1   | 9        | 9        |
+14:32:47.894 [INFO] +---+-----------------+-----+----------+----------+
+14:32:47.894 [INFO] |   | TOTAL           |     |          | 22       |
+14:32:47.894 [INFO] +---+-----------------+-----+----------+----------+
+14:32:47.895 [INFO] ```
+
+14:32:47.895 [INFO] ## Notes
+
+14:32:47.895 [INFO] Bits for modular creatures and rolling toy experiments that needed to survive actual children.
+14:32:51.879 [INFO] Next step_4... Add both purchase amounts (3984 ms)
+14:32:51.879 [INFO]   tool='report_completion' completed_steps_laconic=['Searched for Toy Forge purchases', 'Read both purchase records for their EUR totals'] message='94' grounding_refs=['50_finance/purchases/2025_11_12__eur_000072__bill__toy_forge_pla_bundle.md', '50_finance/purchases/2026_02_23__eur_000022__bill__toy_forge_wheel_and_magnet_pack.md'] outcome='OUTCOME_OK'
+14:32:51.879 [INFO]   LLM: model=gpt-4.1-2025-04-14 prompt=6757 completion=158 total=6915 cached=1024 cost=$0.014778 cum=$0.054132
+14:32:52.930 [INFO] OUT: {}
+14:32:52.931 [INFO] agent OUTCOME_OK. Summary:
+14:32:52.931 [INFO] - Searched for Toy Forge purchases
+14:32:52.931 [INFO] - Read both purchase records for their EUR totals
+
+14:32:52.931 [INFO] AGENT SUMMARY: 94
+14:32:52.931 [INFO] - 50_finance/purchases/2025_11_12__eur_000072__bill__toy_forge_pla_bundle.md
+14:32:52.931 [INFO] - 50_finance/purchases/2026_02_23__eur_000022__bill__toy_forge_wheel_and_magnet_pack.md
+
+14:33:30.747 [INFO] Score: 0.00
+
+

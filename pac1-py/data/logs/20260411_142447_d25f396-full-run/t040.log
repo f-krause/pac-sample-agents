@@ -1,0 +1,578 @@
+14:27:53.133 [INFO] ============================== Starting task: t040 ==============================
+14:27:53.133 [INFO] Handle the next inbox item.
+14:27:53.133 [INFO] --------------------------------------------------------------------------------
+14:27:53.553 [INFO] AUTO: tree -L 3 /
+14:27:53.553 [INFO] /
+14:27:53.553 [INFO] ├── 00_inbox
+14:27:53.553 [INFO] │   ├── 724_next-task.md
+14:27:53.553 [INFO] │   └── AGENTS.MD
+14:27:53.553 [INFO] ├── 10_entities
+14:27:53.553 [INFO] │   ├── AGENTS.MD
+14:27:53.553 [INFO] │   └── cast
+14:27:53.553 [INFO] │       ├── AGENTS.MD
+14:27:53.553 [INFO] │       ├── badger.md
+14:27:53.553 [INFO] │       ├── bix.md
+14:27:53.553 [INFO] │       ├── claudia.md
+14:27:53.553 [INFO] │       ├── elena.md
+14:27:53.553 [INFO] │       ├── foundry.md
+14:27:53.553 [INFO] │       ├── gregor.md
+14:27:53.553 [INFO] │       ├── hanna.md
+14:27:53.553 [INFO] │       ├── ida.md
+14:27:53.553 [INFO] │       ├── jana.md
+14:27:53.553 [INFO] │       ├── juniper.md
+14:27:53.553 [INFO] │       ├── lukas.md
+14:27:53.553 [INFO] │       ├── miles.md
+14:27:53.553 [INFO] │       ├── nina.md
+14:27:53.553 [INFO] │       ├── nora.md
+14:27:53.553 [INFO] │       ├── omar.md
+14:27:53.554 [INFO] │       ├── oskar.md
+14:27:53.554 [INFO] │       ├── pepper.md
+14:27:53.554 [INFO] │       ├── petra.md
+14:27:53.554 [INFO] │       ├── renate.md
+14:27:53.554 [INFO] │       ├── roman.md
+14:27:53.554 [INFO] │       ├── sara.md
+14:27:53.554 [INFO] │       └── tobias.md
+14:27:53.554 [INFO] ├── 20_work
+14:27:53.554 [INFO] │   ├── AGENTS.MD
+14:27:53.554 [INFO] │   ├── reminders
+14:27:53.554 [INFO] │   │   └── AGENTS.MD
+14:27:53.554 [INFO] │   └── tasks
+14:27:53.554 [INFO] │       └── AGENTS.MD
+14:27:53.554 [INFO] ├── 30_knowledge
+14:27:53.554 [INFO] │   ├── AGENTS.MD
+14:27:53.554 [INFO] │   ├── capture
+14:27:53.554 [INFO] │   │   ├── agent-control-planes-and-runtime-shape.md
+14:27:53.554 [INFO] │   │   ├── agent-skills-for-onboarding.md
+14:27:53.554 [INFO] │   │   ├── AGENTS.MD
+14:27:53.554 [INFO] │   │   ├── assistant-virtual-filesystem.md
+14:27:53.554 [INFO] │   │   ├── delightful-frontends-with-gpt.md
+14:27:53.554 [INFO] │   │   ├── integration-agents-need-guardrails.md
+14:27:53.554 [INFO] │   │   ├── knowledge-agents-with-filesystems.md
+14:27:53.554 [INFO] │   │   ├── managed-agents-at-production-scale.md
+14:27:53.554 [INFO] │   │   ├── mcp-market-gap-is-trust.md
+14:27:53.554 [INFO] │   │   ├── nemoclaw-overview.md
+14:27:53.554 [INFO] │   │   ├── persistent-llm-wiki.md
+14:27:53.554 [INFO] │   │   └── project-glasswing.md
+14:27:53.554 [INFO] │   ├── notes
+14:27:53.554 [INFO] │   │   ├── AGENTS.MD
+14:27:53.554 [INFO] │   │   ├── design-constraints-for-a-household-assistant.md
+14:27:53.554 [INFO] │   │   ├── parking-lot.md
+14:27:53.554 [INFO] │   │   ├── what-i-want-help-with-and-what-stays-mine.md
+14:27:53.554 [INFO] │   │   └── why-i-keep-coming-back-to-a-personal-assistant.md
+14:27:53.554 [INFO] │   └── threads
+14:27:53.554 [INFO] │       └── AGENTS.MD
+14:27:53.554 [INFO] ├── 40_projects
+14:27:53.554 [INFO] │   ├── 2026_04_01_hearthline
+14:27:53.554 [INFO] │   │   └── README.MD
+14:27:53.554 [INFO] │   ├── 2026_04_01_house_mesh
+14:27:53.554 [INFO] │   │   └── README.MD
+14:27:53.554 [INFO] │   ├── 2026_04_01_northstar_ledger
+14:27:53.554 [INFO] │   │   └── README.MD
+14:27:53.554 [ERROR] │   ├── 2026_04_25_dockflow_exception_radar
+14:27:53.554 [INFO] │   │   └── README.MD
+14:27:53.554 [INFO] │   ├── 2026_04_28_studio_parts_library
+14:27:53.554 [INFO] │   │   └── README.MD
+14:27:53.554 [INFO] │   ├── 2026_04_30_helios_workflow_sprint
+14:27:53.554 [INFO] │   │   └── README.MD
+14:27:53.554 [INFO] │   ├── 2026_05_02_black_library_evenings
+14:27:53.554 [INFO] │   │   └── README.MD
+14:27:53.555 [INFO] │   ├── 2026_05_02_harbor_body
+14:27:53.555 [INFO] │   │   └── README.MD
+14:27:53.555 [INFO] │   ├── 2026_05_02_toy_forge_saturdays
+14:27:53.555 [INFO] │   │   └── README.MD
+14:27:53.555 [INFO] │   ├── 2026_05_03_reading_spine
+14:27:53.555 [INFO] │   │   └── README.MD
+14:27:53.555 [INFO] │   ├── 2026_05_03_repair_ledger
+14:27:53.555 [INFO] │   │   └── README.MD
+14:27:53.555 [INFO] │   ├── 2026_05_03_school_helper_kit
+14:27:53.555 [INFO] │   │   └── README.MD
+14:27:53.555 [INFO] │   ├── 2026_05_05_family_map_wall
+14:27:53.555 [INFO] │   │   └── README.MD
+14:27:53.555 [INFO] │   ├── 2026_05_05_window_farm_notes
+14:27:53.555 [INFO] │   │   └── README.MD
+14:27:53.555 [INFO] │   └── AGENTS.MD
+14:27:53.555 [INFO] ├── 50_finance
+14:27:53.555 [INFO] │   ├── AGENTS.MD
+14:27:53.555 [INFO] │   ├── invoices
+14:27:53.555 [INFO] │   │   ├── 2025_11_03__eur_000610__inv_0001__northstar_backfill_alpha.md
+14:27:53.555 [INFO] │   │   ├── 2025_12_01__eur_000770__inv_0002__northstar_backfill_beta.md
+14:27:53.555 [INFO] │   │   ├── 2025_12_18__eur_000520__inv_0006__helios_backfill_intake_audit.md
+14:27:53.555 [INFO] │   │   ├── 2025_12_29__eur_000530__inv_0003__northstar_backfill_gamma.md
+14:27:53.555 [INFO] │   │   ├── 2026_01_19__eur_000760__inv_0007__helios_backfill_process_pack.md
+14:27:53.555 [INFO] │   │   ├── 2026_02_14__eur_000890__inv_0004__northstar_design_partner_sprint.md
+14:27:53.555 [INFO] │   │   ├── 2026_02_17__eur_000610__inv_0008__helios_backfill_rollout_week.md
+14:27:53.555 [INFO] │   │   ├── 2026_03_20__eur_000600__inv_0009__helios_discovery_invoice.md
+14:27:53.555 [INFO] │   │   ├── 2026_03_26__eur_000420__inv_0005__northstar_followup_pack.md
+14:27:53.555 [INFO] │   │   ├── 2026_04_21__eur_000780__inv_0010__helios_checklist_pack_invoice.md
+14:27:53.555 [INFO] │   │   ├── 2026_04_27__eur_000550__inv_0011__helios_followup_support_invoice.md
+14:27:53.555 [INFO] │   │   └── AGENTS.MD
+14:27:53.555 [INFO] │   └── purchases
+14:27:53.555 [INFO] │       ├── 2025_12_04__eur_000044__bill__house_mesh_esp32_order.md
+14:27:53.555 [INFO] │       ├── 2025_12_11__eur_000072__bill__toy_forge_pla_bundle.md
+14:27:53.555 [INFO] │       ├── 2025_12_26__eur_000066__bill__hearthline_epaper_panel.md
+14:27:53.555 [INFO] │       ├── 2026_01_03__eur_000032__bill__repair_ledger_faucet_parts.md
+14:27:53.555 [INFO] │       ├── 2026_01_18__eur_000030__bill__northstar_domain_and_mail.md
+14:27:53.555 [INFO] │       ├── 2026_01_30__eur_000050__bill__hearthline_sensor_bundle.md
+14:27:53.555 [INFO] │       ├── 2026_02_03__eur_000080__bill__studio_parts_petg_batch.md
+14:27:53.555 [INFO] │       ├── 2026_02_13__eur_000105__bill__house_mesh_juniper_ssd.md
+14:27:53.555 [INFO] │       ├── 2026_03_02__eur_000036__bill__family_map_wall_board.md
+14:27:53.555 [INFO] │       ├── 2026_03_06__eur_000022__bill__house_mesh_esp32_topup.md
+14:27:53.555 [INFO] │       ├── 2026_03_06__eur_000033__bill__studio_parts_nozzle_and_inserts.md
+14:27:53.555 [INFO] │       ├── 2026_03_24__eur_000022__bill__toy_forge_wheel_and_magnet_pack.md
+14:27:53.555 [INFO] │       ├── 2026_03_31__eur_000025__bill__school_helper_label_tape.md
+14:27:53.555 [INFO] │       ├── 2026_04_01__eur_000089__bill__black_library_terrain_spool.md
+14:27:53.555 [INFO] │       ├── 2026_04_09__eur_000029__bill__repair_ledger_filter_order.md
+14:27:53.555 [INFO] │       ├── 2026_04_12__eur_000020__bill__studio_parts_magnet_and_felt.md
+14:27:53.555 [INFO] │       ├── 2026_04_14__eur_000027__bill__window_farm_starter_tray.md
+14:27:53.555 [INFO] │       └── AGENTS.MD
+14:27:53.556 [INFO] ├── 60_outbox
+14:27:53.556 [INFO] │   ├── AGENTS.MD
+14:27:53.556 [INFO] │   ├── channels
+14:27:53.556 [INFO] │   │   ├── AGENTS.MD
+14:27:53.556 [INFO] │   │   ├── dockflow_ops_slack.md
+14:27:53.556 [INFO] │   │   ├── grimdark_discord.md
+14:27:53.556 [INFO] │   │   ├── health_signal.md
+14:27:53.556 [INFO] │   │   ├── helios_client_email.md
+14:27:53.556 [INFO] │   │   ├── household_calendar.md
+14:27:53.556 [INFO] │   │   ├── household_signal.md
+14:27:53.556 [INFO] │   │   ├── northstar_email.md
+14:27:53.556 [INFO] │   │   ├── studio_signal.md
+14:27:53.556 [INFO] │   │   └── work_calendar.md
+14:27:53.556 [INFO] │   ├── drafts
+14:27:53.556 [INFO] │   │   └── AGENTS.MD
+14:27:53.556 [INFO] │   └── outbox
+14:27:53.556 [INFO] │       └── AGENTS.MD
+14:27:53.556 [INFO] ├── 90_memory
+14:27:53.556 [INFO] │   └── AGENTS.MD
+14:27:53.556 [INFO] ├── 99_system
+14:27:53.556 [INFO] │   ├── AGENTS.MD
+14:27:53.556 [INFO] │   ├── schemas
+14:27:53.556 [INFO] │   │   ├── AGENTS.MD
+14:27:53.556 [INFO] │   │   ├── bulk-processing-and-queueing-frontmatter.md
+14:27:53.556 [INFO] │   │   └── finance-record-frontmatter.md
+14:27:53.556 [INFO] │   └── workflows
+14:27:53.556 [INFO] │       ├── AGENTS.MD
+14:27:53.556 [INFO] │       ├── deletion-and-wiping.md
+14:27:53.556 [INFO] │       ├── inbox-processing-v2-update.md
+14:27:53.556 [INFO] │       ├── migrate-records-to-frontmatter.md
+14:27:53.556 [INFO] │       ├── migrating-to-nora-mcp.md
+14:27:53.556 [INFO] │       ├── ocr-records.md
+14:27:53.556 [INFO] │       ├── process-next-inbox-item.md
+14:27:53.556 [INFO] │       ├── processing-inbox-email.md
+14:27:53.556 [INFO] │       └── sending-email.md
+14:27:53.556 [INFO] └── AGENTS.MD
+14:27:53.762 [INFO] AUTO: cat AGENTS.md
+14:27:53.762 [INFO] Be pragmatic. This is one Obsidian-style personal workspace for Miles's household, work, startup, and project life.
+
+14:27:53.762 [INFO] Key locations:
+
+14:27:53.762 [INFO] - `00_inbox/`: unprocessed drops and requests
+14:27:53.762 [INFO] - `10_entities/cast/`: canonical people, pets, and named systems
+14:27:53.762 [INFO] - `20_work/`: reminders and active tasks
+14:27:53.762 [INFO] - `30_knowledge/`: capture, notes, and threads
+14:27:53.762 [INFO] - `40_projects/`: concrete project folders and artifacts; folder names start with the project creation date as `YYYY_MM_DD_`, and the canonical project record is `README.MD` inside each folder
+14:27:53.762 [INFO] - `50_finance/`: invoices and purchases
+14:27:53.762 [INFO] - `60_outbox/`: channel trust docs, drafts, and outbound state
+14:27:53.762 [INFO] - `90_memory/`: assistant memory and story/history surfaces
+14:27:53.762 [INFO] - `99_system/`: workflows and schemas
+
+14:27:53.762 [INFO] Rules:
+
+14:27:53.762 [INFO] - Read nested `AGENTS.MD` files when you enter a folder.
+14:27:53.762 [INFO] - Before starting task work, inspect `99_system/` with `tree` and then read the relevant workflow or schema docs there.
+14:27:53.762 [INFO] - Records are gradually migrating toward YAML frontmatter so they stay easy to browse in Obsidian while carrying structured fields for automation.
+14:27:53.762 [INFO] - The migration period can be a little messy in the short term because older notes and newer structured notes may coexist, but the long-term goal is to streamline the workspace and clean up record handling.
+14:27:53.762 [INFO] - If a task asks you to add or repair structured metadata on an existing note, first look in `99_system/workflows/` for the current migration guidance, then discover the matching shape doc under `99_system/schemas/`.
+14:27:53.762 [INFO] - Entity files in `10_entities/cast/` are authoritative for identity, `primary_contact_email` when present, and birthdays when present.
+14:27:53.763 [INFO] - If the relevant canonical file does not show the needed fact, ask for clarification instead of guessing.
+14:27:53.763 [INFO] - Keep changes focused and preserve lane boundaries across household, day job, client, startup, and hobby contexts.
+
+14:27:53.977 [INFO] AUTO: {
+14:27:53.977 [INFO]   "unixTime": "1774867620",
+14:27:53.977 [INFO]   "time": "2026-03-30T10:47:00Z"
+14:27:53.977 [INFO] }
+14:27:54.228 [INFO] AUTO-DOC: cat 99_system/workflows/AGENTS.MD
+14:27:54.228 [INFO] `99_system/workflows/` describes how work should move through the vault.
+
+14:27:54.228 [INFO] - Before starting task work, inspect all files under `99_system/` with `tree` so you know wh...
+14:27:54.434 [INFO] AUTO-DOC: cat 00_inbox/AGENTS.MD
+14:27:54.434 [INFO] `00_inbox/` is the intake lane.
+
+14:27:54.434 [INFO] - Treat inbox files as unprocessed requests or source drops, not canonical truth.
+14:27:54.434 [INFO] - If an inbox file is an email-shaped markdown record with YAM...
+14:27:54.666 [INFO] AUTO-DOC: cat 99_system/workflows/process-next-inbox-item.md
+14:27:54.666 [INFO] # Process next inbox item
+
+14:27:54.666 [INFO] Use this workflow when the instruction says to handle, process, review, or work the next inbox item.
+
+14:27:54.666 [INFO] - Go to `00_inbox/`....
+14:27:54.876 [INFO] AUTO-DOC: cat 99_system/workflows/inbox-processing-v2-update.md
+14:27:54.876 [INFO] # Inbox processing v2 update
+
+14:27:54.876 [INFO] This update applies when inbox processing results in repository cleanup or structured-record maintenance.
+
+14:27:54.876 [INFO] - If the ...
+14:27:55.108 [INFO] AUTO-DOC: cat 99_system/workflows/processing-inbox-email.md
+14:27:55.108 [INFO] <!-- AICODE-NOTE: Keep structured inbox-email semantics here so inbox processing and email sending share one visible rule about which fields are canon...
+14:27:55.344 [INFO] AUTO-DOC: cat 60_outbox/AGENTS.MD
+14:27:55.344 [INFO] `60_outbox/` is the communication execution lane.
+
+14:27:55.344 [INFO] - `channels/` documents trust and channel semantics.
+14:27:55.344 [INFO] - `drafts/` is for outbound material that is not yet final.
+14:27:55.344 [INFO] - `outbox/` ...
+14:27:55.524 [INFO] AUTO-DOC: cat 99_system/workflows/sending-email.md
+14:27:55.524 [INFO] <!-- AICODE-NOTE: Keep email-send semantics here, not scattered across outbox and finance docs. This file should define the reusable contract for draft-vs-sent...
+14:27:57.908 [INFO] Next step_1... List and read 00_inbox/ for next item (2383 ms)
+14:27:57.908 [INFO]   tool='read' path='00_inbox/724_next-task.md' number=False start_line=0 end_line=0
+14:27:57.908 [INFO]   LLM: model=gpt-4.1-2025-04-14 prompt=7608 completion=99 total=7707 cached=2176 cost=$0.016008 cum=$0.016008
+14:27:58.235 [INFO] OUT: cat 00_inbox/724_next-task.md
+14:27:58.235 [INFO] # Next inbox item
+
+14:27:58.235 [INFO] Please handle this request:
+
+14:27:58.235 [INFO] OCR these:
+
+14:27:58.235 [INFO] 1. 50_finance/purchases/2026_04_09__eur_000029__bill__repair_ledger_filter_order.md
+14:27:58.235 [INFO] 2. 50_finance/purchases/2026_03_24__eur_000022__bill__toy_forge_wheel_and_magnet_pack.md
+14:27:58.235 [INFO] 3. 50_finance/purchases/2025_12_11__eur_000072__bill__toy_forge_pla_bundle.md
+14:27:58.235 [INFO] 4. 50_finance/purchases/2026_03_31__eur_000025__bill__school_helper_label_tape.md
+14:27:58.235 [INFO] 5. 50_finance/purchases/_2026_03_31__eur_000025__bill__school_helper_label_tape.md
+14:28:01.001 [INFO] Next step_2... Read ocr-records.md workflow for OCR responsibilities. (2765 ms)
+14:28:01.001 [INFO]   tool='read' path='99_system/workflows/ocr-records.md' number=False start_line=0 end_line=0
+14:28:01.001 [INFO]   LLM: model=gpt-4.1-2025-04-14 prompt=7864 completion=140 total=8004 cached=2176 cost=$0.016848 cum=$0.032856
+14:28:01.411 [INFO] OUT: cat 99_system/workflows/ocr-records.md
+14:28:01.411 [INFO] # OCR records
+
+14:28:01.411 [INFO] Use this workflow when a task asks you to OCR a note or record. 
+
+14:28:01.411 [INFO] - OCR here means extracting visible data from the existing note text into YAML frontmatter according to the relevant schema in `99_system/schemas/`.
+
+14:28:03.918 [INFO] Next step_3... Read finance-record-frontmatter.md for expected fields (2506 ms)
+14:28:03.918 [INFO]   tool='read' path='99_system/schemas/finance-record-frontmatter.md' number=False start_line=0 end_line=0
+14:28:03.918 [INFO]   LLM: model=gpt-4.1-2025-04-14 prompt=8004 completion=96 total=8100 cached=2688 cost=$0.016776 cum=$0.049632
+14:28:04.280 [INFO] OUT: cat 99_system/schemas/finance-record-frontmatter.md
+14:28:04.280 [INFO] # Finance record frontmatter
+
+14:28:04.280 [INFO] Finance notes are gradually migrating toward YAML frontmatter so they stay readable in Obsidian while exposing structured fields for automation.
+
+14:28:04.280 [INFO] When a task asks you to OCR, normalize, or structure a finance note:
+
+14:28:04.280 [INFO] - extract visible data from the existing note body into YAML frontmatter
+14:28:04.280 [INFO] - preserve the existing note body below the frontmatter as the source OCR or human-readable content
+14:28:04.280 [INFO] - do not invent fields that are not supported by the visible note
+14:28:04.280 [INFO] - if the visible invoice or bill data does not mention a currency, assume euros for `total_eur`, `unit_eur`, and `line_eur`
+
+14:28:04.280 [INFO] ## Invoice schema
+
+14:28:04.280 [INFO] For invoices, add YAML frontmatter like this:
+
+14:28:04.280 [INFO] ```yaml
+14:28:04.280 [INFO] ---
+14:28:04.280 [INFO] record_type: invoice
+14:28:04.280 [INFO] invoice_number: INV-0017
+14:28:04.280 [INFO] alias: northstar-renewal
+14:28:04.280 [INFO] issued_on: 2026-03-10
+14:28:04.280 [INFO] total_eur: 4200
+14:28:04.280 [INFO] counterparty: Northstar Forecasting
+14:28:04.280 [INFO] project: Forecast Recovery Sprint
+14:28:04.280 [INFO] related_entity: Mila Novak
+14:28:04.280 [INFO] lines:
+14:28:04.280 [INFO]   - item: Discovery workshop
+14:28:04.280 [INFO]     quantity: 2
+14:28:04.280 [INFO]     unit_eur: 900
+14:28:04.280 [INFO]     line_eur: 1800
+14:28:04.280 [INFO]   - item: Model tuning
+14:28:04.280 [INFO]     quantity: 3
+14:28:04.280 [INFO]     unit_eur: 800
+14:28:04.280 [INFO]     line_eur: 2400
+14:28:04.280 [INFO] ---
+14:28:04.280 [INFO] ```
+
+14:28:04.280 [INFO] Required invoice fields:
+
+14:28:04.280 [INFO] - `record_type`
+14:28:04.280 [INFO] - `invoice_number`
+14:28:04.280 [INFO] - `alias`
+14:28:04.280 [INFO] - `issued_on`
+14:28:04.280 [INFO] - `total_eur`
+14:28:04.280 [INFO] - `counterparty`
+14:28:04.280 [INFO] - `project`
+14:28:04.280 [INFO] - `lines`
+
+14:28:04.280 [INFO] Optional invoice fields:
+
+14:28:04.280 [INFO] - `related_entity`
+
+14:28:04.280 [INFO] Invoice line rules:
+
+14:28:04.280 [INFO] - `lines` is an ordered list and should follow the visible line-item order from the note
+14:28:04.280 [INFO] - each line item must include:
+14:28:04.280 [INFO]   - `item`
+14:28:04.280 [INFO]   - `quantity`
+14:28:04.280 [INFO]   - `unit_eur`
+14:28:04.280 [INFO]   - `line_eur`
+14:28:04.280 [INFO] - `line_eur` should match `quantity * unit_eur`
+
+14:28:04.280 [INFO] ## Bill schema
+
+14:28:04.280 [INFO] For bills, add YAML frontmatter like this:
+
+14:28:04.280 [INFO] ```yaml
+14:28:04.280 [INFO] ---
+14:28:04.280 [INFO] record_type: bill
+14:28:04.280 [INFO] bill_id: bill.hosting-renewal
+14:28:04.280 [INFO] alias: hosting-renewal
+14:28:04.280 [INFO] purchased_on: 2026-03-11
+14:28:04.280 [INFO] total_eur: 320
+14:28:04.280 [INFO] counterparty: Hetzner
+14:28:04.280 [INFO] project: Household Infra Cleanup
+14:28:04.280 [INFO] related_entity: Miles Novak
+14:28:04.280 [INFO] lines:
+14:28:04.280 [INFO]   - item: Cloud instance
+14:28:04.280 [INFO]     quantity: 1
+14:28:04.280 [INFO]     unit_eur: 200
+14:28:04.280 [INFO]     line_eur: 200
+14:28:04.280 [INFO]   - item: Backup storage
+14:28:04.280 [INFO]     quantity: 2
+14:28:04.280 [INFO]     unit_eur: 60
+14:28:04.281 [INFO]     line_eur: 120
+14:28:04.281 [INFO] ---
+14:28:04.281 [INFO] ```
+
+14:28:04.281 [INFO] Required bill fields:
+
+14:28:04.281 [INFO] - `record_type`
+14:28:04.281 [INFO] - `bill_id`
+14:28:04.281 [INFO] - `alias`
+14:28:04.281 [INFO] - `purchased_on`
+14:28:04.281 [INFO] - `total_eur`
+14:28:04.281 [INFO] - `counterparty`
+14:28:04.281 [INFO] - `project`
+14:28:04.281 [INFO] - `lines`
+
+14:28:04.281 [INFO] Optional bill fields:
+
+14:28:04.281 [INFO] - `related_entity`
+
+14:28:04.281 [INFO] Bill line rules:
+
+14:28:04.281 [INFO] - `lines` is an ordered list and should follow the visible line-item order from the note
+14:28:04.281 [INFO] - each line item must include:
+14:28:04.281 [INFO]   - `item`
+14:28:04.281 [INFO]   - `quantity`
+14:28:04.281 [INFO]   - `unit_eur`
+14:28:04.281 [INFO]   - `line_eur`
+14:28:04.281 [INFO] - `line_eur` should match `quantity * unit_eur`
+
+14:28:07.376 [INFO] Next step_4... Read 2026_04_09__eur_000029__bill__repair_ledger_filter_order.md (3094 ms)
+14:28:07.376 [INFO]   tool='read' path='50_finance/purchases/2026_04_09__eur_000029__bill__repair_ledger_filter_order.md' number=False start_line=0 end_line=0
+14:28:07.376 [INFO]   LLM: model=gpt-4.1-2025-04-14 prompt=8748 completion=143 total=8891 cached=0 cost=$0.018640 cum=$0.068272
+14:28:07.677 [INFO] OUT: cat 50_finance/purchases/2026_04_09__eur_000029__bill__repair_ledger_filter_order.md
+14:28:07.677 [INFO] # Filter and gasket order
+
+14:28:07.677 [INFO] ```text
+14:28:07.677 [INFO] +----------------+---------------------------------+
+14:28:07.677 [INFO] | field          | value                           |
+14:28:07.677 [INFO] +----------------+---------------------------------+
+14:28:07.677 [INFO] | record_type    | bill                            |
+14:28:07.677 [INFO] | bill_id        | bill.repair_ledger_filter_order |
+14:28:07.677 [INFO] | alias          | repair_ledger_filter_order      |
+14:28:07.677 [INFO] | purchased_on   | 2026-04-09                      |
+14:28:07.677 [INFO] | total_eur      | 29                              |
+14:28:07.677 [INFO] | counterparty   | Haushaltshilfe München          |
+14:28:07.677 [INFO] | project        | Repair Ledger                   |
+14:28:07.677 [INFO] | related_entity | Juniper                         |
+14:28:07.677 [INFO] +----------------+---------------------------------+
+14:28:07.677 [INFO] ```
+
+14:28:07.677 [INFO] ## Line Items
+
+14:28:07.677 [INFO] ```text
+14:28:07.677 [INFO] +---+-------------------------+-----+----------+----------+
+14:28:07.677 [INFO] | # | item                    | qty | unit_eur | line_eur |
+14:28:07.677 [INFO] +---+-------------------------+-----+----------+----------+
+14:28:07.677 [INFO] | 1 | HVAC filter pack        | 1   | 18       | 18       |
+14:28:07.677 [INFO] | 2 | replacement gasket tape | 1   | 11       | 11       |
+14:28:07.677 [INFO] +---+-------------------------+-----+----------+----------+
+14:28:07.677 [INFO] |   | TOTAL                   |     |          | 29       |
+14:28:07.677 [INFO] +---+-------------------------+-----+----------+----------+
+14:28:07.677 [INFO] ```
+
+14:28:07.677 [INFO] ## Notes
+
+14:28:07.677 [INFO] Recent maintenance receipt that pushed Repair Ledger from vague intention into an active memory lane.
+14:28:15.050 [INFO] Next step_5... Write OCR'd YAML frontmatter with bill fields to file (7373 ms)
+14:28:15.050 [INFO]   tool='write' path='50_finance/purchases/2026_04_09__eur_000029__bill__repair_ledger_filter_order.md' content='---\nrecord_type: bill\nbill_id: bill.repair_ledger_filter_order\nalias: repair_ledger_filter_order\npurchased_on: 2026-04-09\ntotal_eur: 29\ncounterparty: Haushaltshilfe München\nproject: Repair Ledger\nrelated_entity: Juniper\nlines:\n  - item: HVAC filter pack\n    quantity: 1\n    unit_eur: 18\n    line_eur: 18\n  - item: replacement gasket tape\n    quantity: 1\n    unit_eur: 11\n    line_eur: 11\n---\n\n# Filter and gasket order\n\n```text\n+----------------+---------------------------------+\n| field          | value                           |\n+----------------+---------------------------------+\n| record_type    | bill                            |\n| bill_id        | bill.repair_ledger_filter_order |\n| alias          | repair_ledger_filter_order      |\n| purchased_on   | 2026-04-09                      |\n| total_eur      | 29                              |\n| counterparty   | Haushaltshilfe München          |\n| project        | Repair Ledger                   |\n| related_entity | Juniper                         |\n+----------------+---------------------------------+\n```\n\n## Line Items\n\n```text\n+---+-------------------------+-----+----------+----------+\n| # | item                    | qty | unit_eur | line_eur |\n+---+-------------------------+-----+----------+----------+\n| 1 | HVAC filter pack        | 1   | 18       | 18       |\n| 2 | replacement gasket tape | 1   | 11       | 11       |\n+---+-------------------------+-----+----------+----------+\n|   | TOTAL                   |     |          | 29       |\n+---+-------------------------+-----+----------+----------+\n```\n\n## Notes\n\nRecent maintenance receipt that pushed Repair Ledger from vague intention into an active memory lane.\n' start_line=0 end_line=0
+14:28:15.050 [INFO]   LLM: model=gpt-4.1-2025-04-14 prompt=9150 completion=571 total=9721 cached=2176 cost=$0.022868 cum=$0.091140
+14:28:15.295 [INFO] OUT: {}
+14:29:03.145 [WARN] Next step_6... length limit hit, retrying concisely... Read 2026_03_24__eur_000022__bill__toy_forge_wheel_and_magnet_pack.md (47849 ms)
+14:29:03.145 [INFO]   tool='read' path='50_finance/purchases/2026_03_24__eur_000022__bill__toy_forge_wheel_and_magnet_pack.md' number=False start_line=0 end_line=0
+14:29:03.145 [INFO]   LLM: model=gpt-4.1-2025-04-14 prompt=9712 completion=123 total=9835 cached=7424 cost=$0.020408 cum=$0.111548
+14:29:03.560 [INFO] OUT: cat 50_finance/purchases/2026_03_24__eur_000022__bill__toy_forge_wheel_and_magnet_pack.md
+14:29:03.560 [INFO] # Toy hardware bits
+
+14:29:03.560 [INFO] ```text
+14:29:03.560 [INFO] +----------------+--------------------------------------+
+14:29:03.561 [INFO] | field          | value                                |
+14:29:03.561 [INFO] +----------------+--------------------------------------+
+14:29:03.561 [INFO] | record_type    | bill                                 |
+14:29:03.561 [INFO] | bill_id        | bill.toy_forge_wheel_and_magnet_pack |
+14:29:03.561 [INFO] | alias          | toy_forge_wheel_and_magnet_pack      |
+14:29:03.561 [INFO] | purchased_on   | 2026-03-24                           |
+14:29:03.561 [INFO] | total_eur      | 22                                   |
+14:29:03.561 [INFO] | counterparty   | 深圳市星河玩具配件                            |
+14:29:03.561 [INFO] | project        | Toy Forge Saturdays                  |
+14:29:03.561 [INFO] | related_entity | Ida Novak                            |
+14:29:03.561 [INFO] +----------------+--------------------------------------+
+14:29:03.561 [INFO] ```
+
+14:29:03.561 [INFO] ## Line Items
+
+14:29:03.561 [INFO] ```text
+14:29:03.561 [INFO] +---+-----------------+-----+----------+----------+
+14:29:03.561 [INFO] | # | item            | qty | unit_eur | line_eur |
+14:29:03.561 [INFO] +---+-----------------+-----+----------+----------+
+14:29:03.561 [INFO] | 1 | small wheel kit | 1   | 13       | 13       |
+14:29:03.561 [INFO] | 2 | magnet pack     | 1   | 9        | 9        |
+14:29:03.561 [INFO] +---+-----------------+-----+----------+----------+
+14:29:03.561 [INFO] |   | TOTAL           |     |          | 22       |
+14:29:03.561 [INFO] +---+-----------------+-----+----------+----------+
+14:29:03.561 [INFO] ```
+
+14:29:03.561 [INFO] ## Notes
+
+14:29:03.561 [INFO] Bits for modular creatures and rolling toy experiments that needed to survive actual children.
+14:29:10.787 [INFO] Next step_7... Write bill frontmatter to this file (7226 ms)
+14:29:10.787 [INFO]   tool='write' path='50_finance/purchases/2026_03_24__eur_000022__bill__toy_forge_wheel_and_magnet_pack.md' content='---\nrecord_type: bill\nbill_id: bill.toy_forge_wheel_and_magnet_pack\nalias: toy_forge_wheel_and_magnet_pack\npurchased_on: 2026-03-24\ntotal_eur: 22\ncounterparty: 深圳市星河玩具配件\nproject: Toy Forge Saturdays\nrelated_entity: Ida Novak\nlines:\n  - item: small wheel kit\n    quantity: 1\n    unit_eur: 13\n    line_eur: 13\n  - item: magnet pack\n    quantity: 1\n    unit_eur: 9\n    line_eur: 9\n---\n\n# Toy hardware bits\n\n```text\n+----------------+--------------------------------------+\n| field          | value                                |\n+----------------+--------------------------------------+\n| record_type    | bill                                 |\n| bill_id        | bill.toy_forge_wheel_and_magnet_pack |\n| alias          | toy_forge_wheel_and_magnet_pack      |\n| purchased_on   | 2026-03-24                           |\n| total_eur      | 22                                   |\n| counterparty   | 深圳市星河玩具配件                            |\n| project        | Toy Forge Saturdays                  |\n| related_entity | Ida Novak                            |\n+----------------+--------------------------------------+\n```\n\n## Line Items\n\n```text\n+---+-----------------+-----+----------+----------+\n| # | item            | qty | unit_eur | line_eur |\n+---+-----------------+-----+----------+----------+\n| 1 | small wheel kit | 1   | 13       | 13       |\n| 2 | magnet pack     | 1   | 9        | 9        |\n+---+-----------------+-----+----------+----------+\n|   | TOTAL           |     |          | 22       |\n+---+-----------------+-----+----------+----------+\n```\n\n## Notes\n\nBits for modular creatures and rolling toy experiments that needed to survive actual children.\n' start_line=0 end_line=0
+14:29:10.787 [INFO]   LLM: model=gpt-4.1-2025-04-14 prompt=10097 completion=553 total=10650 cached=7808 cost=$0.024618 cum=$0.136166
+14:29:11.157 [INFO] OUT: {}
+14:30:00.388 [WARN] Next step_8... length limit hit, retrying concisely... Read next purchase note (49230 ms)
+14:30:00.388 [INFO]   tool='read' path='50_finance/purchases/2025_12_11__eur_000072__bill__toy_forge_pla_bundle.md' number=False start_line=0 end_line=0
+14:30:00.388 [INFO]   LLM: model=gpt-4.1-2025-04-14 prompt=10681 completion=133 total=10814 cached=2176 cost=$0.022426 cum=$0.158592
+14:30:00.904 [INFO] OUT: cat 50_finance/purchases/2025_12_11__eur_000072__bill__toy_forge_pla_bundle.md
+14:30:00.904 [INFO] # Family PLA spool bundle
+
+14:30:00.904 [INFO] ```text
+14:30:00.904 [INFO] +----------------+---------------------------+
+14:30:00.904 [INFO] | field          | value                     |
+14:30:00.904 [INFO] +----------------+---------------------------+
+14:30:00.904 [INFO] | record_type    | bill                      |
+14:30:00.904 [INFO] | bill_id        | bill.toy_forge_pla_bundle |
+14:30:00.904 [INFO] | alias          | toy_forge_pla_bundle      |
+14:30:00.904 [INFO] | purchased_on   | 2025-12-11                |
+14:30:00.904 [INFO] | total_eur      | 72                        |
+14:30:00.904 [INFO] | counterparty   | Filamenthütte Wien        |
+14:30:00.904 [INFO] | project        | Toy Forge Saturdays       |
+14:30:00.904 [INFO] | related_entity | Badger                    |
+14:30:00.904 [INFO] +----------------+---------------------------+
+14:30:00.904 [INFO] ```
+
+14:30:00.904 [INFO] ## Line Items
+
+14:30:00.904 [INFO] ```text
+14:30:00.904 [INFO] +---+------------------------+-----+----------+----------+
+14:30:00.904 [INFO] | # | item                   | qty | unit_eur | line_eur |
+14:30:00.904 [INFO] +---+------------------------+-----+----------+----------+
+14:30:00.904 [INFO] | 1 | PLA spool mixed colors | 3   | 24       | 72       |
+14:30:00.904 [INFO] +---+------------------------+-----+----------+----------+
+14:30:00.904 [INFO] |   | TOTAL                  |     |          | 72       |
+14:30:00.904 [INFO] +---+------------------------+-----+----------+----------+
+14:30:00.904 [INFO] ```
+
+14:30:00.904 [INFO] ## Notes
+
+14:30:00.905 [INFO] Older family-printing consumables that only got sorted once Toy Forge became a named lane.
+14:30:09.069 [INFO] Next step_9... Write OCR bill YAML to this note (8164 ms)
+14:30:09.069 [INFO]   tool='write' path='50_finance/purchases/2025_12_11__eur_000072__bill__toy_forge_pla_bundle.md' content='---\nrecord_type: bill\nbill_id: bill.toy_forge_pla_bundle\nalias: toy_forge_pla_bundle\npurchased_on: 2025-12-11\ntotal_eur: 72\ncounterparty: Filamenthütte Wien\nproject: Toy Forge Saturdays\nrelated_entity: Badger\nlines:\n  - item: PLA spool mixed colors\n    quantity: 3\n    unit_eur: 24\n    line_eur: 72\n---\n\n# Family PLA spool bundle\n\n```text\n+----------------+---------------------------+\n| field          | value                     |\n+----------------+---------------------------+\n| record_type    | bill                      |\n| bill_id        | bill.toy_forge_pla_bundle |\n| alias          | toy_forge_pla_bundle      |\n| purchased_on   | 2025-12-11                |\n| total_eur      | 72                        |\n| counterparty   | Filamenthütte Wien        |\n| project        | Toy Forge Saturdays       |\n| related_entity | Badger                    |\n+----------------+---------------------------+\n```\n\n## Line Items\n\n```text\n+---+------------------------+-----+----------+----------+\n| # | item                   | qty | unit_eur | line_eur |\n+---+------------------------+-----+----------+----------+\n| 1 | PLA spool mixed colors | 3   | 24       | 72       |\n+---+------------------------+-----+----------+----------+\n|   | TOTAL                  |     |          | 72       |\n+---+------------------------+-----+----------+----------+\n```\n\n## Notes\n\nOlder family-printing consumables that only got sorted once Toy Forge became a named lane.\n' start_line=0 end_line=0
+14:30:09.070 [INFO]   LLM: model=gpt-4.1-2025-04-14 prompt=11014 completion=558 total=11572 cached=10496 cost=$0.026492 cum=$0.185084
+14:30:09.751 [INFO] OUT: {}
+14:30:14.612 [INFO] Next step_10... Read school_helper_label_tape purchase note (4861 ms)
+14:30:14.612 [INFO]   tool='read' path='50_finance/purchases/2026_03_31__eur_000025__bill__school_helper_label_tape.md' number=False start_line=0 end_line=0
+14:30:14.612 [INFO]   LLM: model=gpt-4.1-2025-04-14 prompt=10902 completion=125 total=11027 cached=2688 cost=$0.022804 cum=$0.207888
+14:30:15.134 [INFO] OUT: cat 50_finance/purchases/2026_03_31__eur_000025__bill__school_helper_label_tape.md
+14:30:15.134 [INFO] # Label tape and organizer bins
+
+14:30:15.134 [INFO] ```text
+14:30:15.134 [INFO] +----------------+-------------------------------+
+14:30:15.134 [INFO] | field          | value                         |
+14:30:15.134 [INFO] +----------------+-------------------------------+
+14:30:15.134 [INFO] | record_type    | bill                          |
+14:30:15.134 [INFO] | bill_id        | bill.school_helper_label_tape |
+14:30:15.134 [INFO] | alias          | school_helper_label_tape      |
+14:30:15.134 [INFO] | purchased_on   | 2026-03-31                    |
+14:30:15.134 [INFO] | total_eur      | 25                            |
+14:30:15.134 [INFO] | counterparty   | Müller Bürobedarf             |
+14:30:15.134 [INFO] | project        | School Helper Kit             |
+14:30:15.134 [INFO] | related_entity | Ida Novak                     |
+14:30:15.134 [INFO] +----------------+-------------------------------+
+14:30:15.134 [INFO] ```
+
+14:30:15.134 [INFO] ## Line Items
+
+14:30:15.134 [INFO] ```text
+14:30:15.134 [INFO] +---+----------------------+-----+----------+----------+
+14:30:15.134 [INFO] | # | item                 | qty | unit_eur | line_eur |
+14:30:15.134 [INFO] +---+----------------------+-----+----------+----------+
+14:30:15.134 [INFO] | 1 | label tape refill    | 1   | 14       | 14       |
+14:30:15.134 [INFO] | 2 | small organizer bins | 1   | 11       | 11       |
+14:30:15.134 [INFO] +---+----------------------+-----+----------+----------+
+14:30:15.134 [INFO] |   | TOTAL                |     |          | 25       |
+14:30:15.134 [INFO] +---+----------------------+-----+----------+----------+
+14:30:15.134 [INFO] ```
+
+14:30:15.134 [INFO] ## Notes
+
+14:30:15.134 [INFO] Minor but real school-routine expense that only gets remembered if it lands in the project lane.
+14:30:22.452 [INFO] Next step_11... Write extracted frontmatter YAML to school_helper_label_tape note (7316 ms)
+14:30:22.452 [INFO]   tool='write' path='50_finance/purchases/2026_03_31__eur_000025__bill__school_helper_label_tape.md' content='---\nrecord_type: bill\nbill_id: bill.school_helper_label_tape\nalias: school_helper_label_tape\npurchased_on: 2026-03-31\ntotal_eur: 25\ncounterparty: Müller Bürobedarf\nproject: School Helper Kit\nrelated_entity: Ida Novak\nlines:\n  - item: label tape refill\n    quantity: 1\n    unit_eur: 14\n    line_eur: 14\n  - item: small organizer bins\n    quantity: 1\n    unit_eur: 11\n    line_eur: 11\n---\n\n# Label tape and organizer bins\n\n```text\n+----------------+-------------------------------+\n| field          | value                         |\n+----------------+-------------------------------+\n| record_type    | bill                          |\n| bill_id        | bill.school_helper_label_tape |\n| alias          | school_helper_label_tape      |\n| purchased_on   | 2026-03-31                    |\n| total_eur      | 25                            |\n| counterparty   | Müller Bürobedarf             |\n| project        | School Helper Kit             |\n| related_entity | Ida Novak                     |\n+----------------+-------------------------------+\n```\n\n## Line Items\n\n```text\n+---+----------------------+-----+----------+----------+\n| # | item                 | qty | unit_eur | line_eur |\n+---+----------------------+-----+----------+----------+\n| 1 | label tape refill    | 1   | 14       | 14       |\n| 2 | small organizer bins | 1   | 11       | 11       |\n+---+----------------------+-----+----------+----------+\n|   | TOTAL                |     |          | 25       |\n+---+----------------------+-----+----------+----------+\n```\n\n## Notes\n\nMinor but real school-routine expense that only gets remembered if it lands in the project lane.\n' start_line=0 end_line=0
+14:30:22.452 [INFO]   LLM: model=gpt-4.1-2025-04-14 prompt=11066 completion=546 total=11612 cached=2688 cost=$0.026500 cum=$0.234388
+14:30:23.069 [INFO] OUT: {}
+14:31:13.244 [WARN] Next step_12... length limit hit, retrying concisely... Check if _2026_03_31 file is a duplicate or needs update (50174 ms)
+14:31:13.244 [INFO]   tool='list' path='50_finance/purchases/'
+14:31:13.244 [INFO]   LLM: model=gpt-4.1-2025-04-14 prompt=11627 completion=79 total=11706 cached=0 cost=$0.023886 cum=$0.258274
+14:31:13.827 [INFO] OUT: ls 50_finance/purchases/
+14:31:13.827 [INFO] 2025_12_04__eur_000044__bill__house_mesh_esp32_order.md
+14:31:13.827 [INFO] 2025_12_11__eur_000072__bill__toy_forge_pla_bundle.md
+14:31:13.827 [INFO] 2025_12_26__eur_000066__bill__hearthline_epaper_panel.md
+14:31:13.827 [INFO] 2026_01_03__eur_000032__bill__repair_ledger_faucet_parts.md
+14:31:13.827 [INFO] 2026_01_18__eur_000030__bill__northstar_domain_and_mail.md
+14:31:13.827 [INFO] 2026_01_30__eur_000050__bill__hearthline_sensor_bundle.md
+14:31:13.827 [INFO] 2026_02_03__eur_000080__bill__studio_parts_petg_batch.md
+14:31:13.827 [INFO] 2026_02_13__eur_000105__bill__house_mesh_juniper_ssd.md
+14:31:13.827 [INFO] 2026_03_02__eur_000036__bill__family_map_wall_board.md
+14:31:13.827 [INFO] 2026_03_06__eur_000022__bill__house_mesh_esp32_topup.md
+14:31:13.827 [INFO] 2026_03_06__eur_000033__bill__studio_parts_nozzle_and_inserts.md
+14:31:13.827 [INFO] 2026_03_24__eur_000022__bill__toy_forge_wheel_and_magnet_pack.md
+14:31:13.827 [INFO] 2026_03_31__eur_000025__bill__school_helper_label_tape.md
+14:31:13.827 [INFO] 2026_04_01__eur_000089__bill__black_library_terrain_spool.md
+14:31:13.827 [INFO] 2026_04_09__eur_000029__bill__repair_ledger_filter_order.md
+14:31:13.827 [INFO] 2026_04_12__eur_000020__bill__studio_parts_magnet_and_felt.md
+14:31:13.827 [INFO] 2026_04_14__eur_000027__bill__window_farm_starter_tray.md
+14:31:13.827 [INFO] AGENTS.MD
+14:32:01.929 [WARN] Next step_13... length limit hit, retrying concisely... Delete the processed inbox item (48101 ms)
+14:32:01.929 [INFO]   tool='delete' path='00_inbox/724_next-task.md'
+14:32:01.929 [INFO]   LLM: model=gpt-4.1-2025-04-14 prompt=11847 completion=68 total=11915 cached=7936 cost=$0.024238 cum=$0.282512
+14:32:02.443 [INFO] OUT: {}
+14:32:07.254 [INFO] Next step_14... Report completion (4787 ms)
+14:32:07.254 [WARN]   tool='report_completion' completed_steps_laconic=['Read all inbox and workflow docs for OCR context', 'Extracted and wrote YAML frontmatter for valid finance bills', 'Skipped non-existent _2026_03_31 file (typo/duplicate)', 'Deleted inbox task file'] message='OCR frontmatter added to all referenced files (except nonexistent _2026_03_31 file); inbox file deleted.' grounding_refs=['99_system/workflows/ocr-records.md', '99_system/schemas/finance-record-frontmatter.md', '99_system/workflows/process-next-inbox-item.md', '50_finance/purchases/2026_04_09__eur_000029__bill__repair_ledger_filter_order.md', '50_finance/purchases/2026_03_24__eur_000022__bill__toy_forge_wheel_and_magnet_pack.md', '50_finance/purchases/2025_12_11__eur_000072__bill__toy_forge_pla_bundle.md', '50_finance/purchases/2026_03_31__eur_000025__bill__school_helper_label_tape.md', '00_inbox/724_next-task.md'] outcome='OUTCOME_OK'
+14:32:07.255 [INFO]   LLM: model=gpt-4.1-2025-04-14 prompt=11867 completion=306 total=12173 cached=2176 cost=$0.026182 cum=$0.308694
+14:32:07.991 [INFO] OUT: {}
+14:32:07.991 [INFO] agent OUTCOME_OK. Summary:
+14:32:07.991 [INFO] - Read all inbox and workflow docs for OCR context
+14:32:07.991 [INFO] - Extracted and wrote YAML frontmatter for valid finance bills
+14:32:07.991 [WARN] - Skipped non-existent _2026_03_31 file (typo/duplicate)
+14:32:07.991 [INFO] - Deleted inbox task file
+
+14:32:07.991 [INFO] AGENT SUMMARY: OCR frontmatter added to all referenced files (except nonexistent _2026_03_31 file); inbox file deleted.
+14:32:07.991 [INFO] - 99_system/workflows/ocr-records.md
+14:32:07.991 [INFO] - 99_system/schemas/finance-record-frontmatter.md
+14:32:07.991 [INFO] - 99_system/workflows/process-next-inbox-item.md
+14:32:07.991 [INFO] - 50_finance/purchases/2026_04_09__eur_000029__bill__repair_ledger_filter_order.md
+14:32:07.991 [INFO] - 50_finance/purchases/2026_03_24__eur_000022__bill__toy_forge_wheel_and_magnet_pack.md
+14:32:07.991 [INFO] - 50_finance/purchases/2025_12_11__eur_000072__bill__toy_forge_pla_bundle.md
+14:32:07.991 [INFO] - 50_finance/purchases/2026_03_31__eur_000025__bill__school_helper_label_tape.md
+14:32:07.991 [INFO] - 00_inbox/724_next-task.md
+
+14:32:40.807 [INFO] Score: 0.00
+
+
